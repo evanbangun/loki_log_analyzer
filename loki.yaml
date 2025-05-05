@@ -3,6 +3,7 @@ auth_enabled: false
 server:
   http_listen_port: 3100
   grpc_listen_port: 9095
+  grpc_server_max_recv_msg_size: 8388608
 
 compactor:
   shared_store: filesystem

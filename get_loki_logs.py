@@ -4,6 +4,7 @@ import re
 from datetime import datetime, timedelta
 import time
 import pandas as pd
+import os
 
 tenantDomain = set()
 
@@ -19,24 +20,48 @@ def get_logs(start_date, end_date):
 
     total_record = 0
 
-    while current_date < end_date:
-        # Query parameters
-<<<<<<< HEAD
+    limit = 5000
 
+    log_dir = 'logs'
+    os.makedirs(log_dir, exist_ok=True)
+
+    print_time = current_date
+    print_time_str = pd.Timestamp(print_time).strftime('%Y-%m-%d')
+    extract_path = os.path.join(log_dir, f'logs_{print_time_str}.txt')
+    outfile = open(extract_path, 'w', encoding='utf-8', buffering=1024*1024)
+    
+    print("iterating through : ", (pd.Timestamp(current_date)).date())
+
+    while current_date < end_date:
+        if (pd.Timestamp(print_time)).day != (pd.Timestamp(current_date)).day:
+            outfile.close()
+            print_time = current_date
+            print_time_str = pd.Timestamp(print_time).strftime('%Y-%m-%d')
+            extract_path = os.path.join(log_dir, f'logs_{print_time_str}.txt')
+            outfile = open(extract_path, 'w', encoding='utf-8', buffering=1024*1024)
+            print("iterating through : ", (pd.Timestamp(current_date)).date())
+        
         if pd.Timestamp(current_date) + pd.Timedelta(hours=1) > pd.Timestamp(end_date):
             cur_end_date = end_date
         else:
             cur_end_date = (pd.Timestamp(current_date) + pd.Timedelta(hours=1)).isoformat().replace('+00:00', 'Z')
 
-        print("check current date and end date : ", current_date, cur_end_date)
+        # Query parameters
         params = {
-            "query": '{container="splp-gw"} |~ "Metric Name: apim:response"',
+            # "query": '{container="splp-gw"} |~ "Metric Name: apim:response"',
+            "query": '{container="splp-gw"}',
             "start": current_date,
             "end": cur_end_date,
-            "limit": 5000,
+            "limit": limit,
             "direction" : "FORWARD"
         }
 
+        new_logs_found = False
+        
+        # # Print the full URL with parameters
+        # full_url = f"{url}?{'&'.join(f'{k}={v}' for k, v in params.items())}"
+        # print(f"Query URL: {full_url}\n")
+
         # Make the request
         response = requests.get(url, params=params)
 
@@ -44,112 +69,46 @@ def get_logs(start_date, end_date):
             data = response.json()
             logs_count = 0
 
-            # Print each log entry
+            # print("current iteration : ", current_date, cur_end_date)
+
             for stream in data['data']['result']:
                 logs_count += len(stream['values'])
                 for value in stream['values']:
                     log_content = json.loads(value[1])
+                    # print("current iteration : ", current_date, cur_end_date, logs_count, log_content["time"])
                     if current_date < log_content["time"]:
+                        # print(current_date, log_content["time"])
                         current_date = log_content["time"]
-                    match = pattern.search(log_content["log"])
-                    if match:
-                        tenantDomain.add(match.group(1))
+                        new_logs_found = True
+                    outfile.write(json.dumps(log_content) + '\n')
+            #         match = pattern.search(log_content["log"])
+            #         if match:
+            #             tenantDomain.add(match.group(1))
             total_record += logs_count
-            if logs_count < 5000 and cur_end_date == end_date:
+            if logs_count < limit and cur_end_date == end_date:
                 print("last iteration : ", current_date, cur_end_date, logs_count)
-                # Print the full URL with parameters
-                full_url = f"{url}?{'&'.join(f'{k}={v}' for k, v in params.items())}"
-                print(f"Query URL: {full_url}\n")
                 break
+            
+            if not new_logs_found:
+                current_date = cur_end_date
+                cur_end_date = (pd.Timestamp(cur_end_date) + pd.Timedelta(hours=1)).isoformat().replace('+00:00', 'Z')
         else:
             print(f"Error: {response.status_code}")
             print(response.text)
-            print("last iteration : ", current_date, cur_end_date, logs_count)
-            # Print the full URL with parameters
-            full_url = f"{url}?{'&'.join(f'{k}={v}' for k, v in params.items())}"
-            print(f"Query URL: {full_url}\n")
-            break
-
-        time.sleep(0.05)
-
-=======
-
-        if pd.Timestamp(current_date) + pd.Timedelta(hours=1) > pd.Timestamp(end_date):
-            # print("check current date and end date : ", current_date, end_date)
-            # print("current_date : " + str(pd.Timestamp(current_date)))
-            # print("end_date : " + str(pd.Timestamp(end_date)))
-            params = {
-                "query": '{container="splp-gw"} |~ "Metric Name: apim:response"',
-                "start": current_date,
-                "end": end_date,
-                "limit": 5000,
-                "direction" : "FORWARD"
-            }
-        else:
-            # print("check current date and end date : ", current_date, (pd.Timestamp(current_date) + pd.Timedelta(hours=1)).isoformat().replace('+00:00', 'Z'))
-            # print("current_date : " + str(pd.Timestamp(current_date)))
-            # print("end_date : " + str((pd.Timestamp(current_date) + pd.Timedelta(hours=1)).isoformat().replace('+00:00', 'Z'))
-            params = {
-                "query": '{container="splp-gw"} |~ "Metric Name: apim:response"',
-                "start": current_date,
-                "end": (pd.Timestamp(current_date) + pd.Timedelta(hours=1)).isoformat().replace('+00:00', 'Z'),
-                "limit": 5000,
-                "direction" : "FORWARD"
-            }
-
-        # Make the request
-        response = requests.get(url, params=params)
-
-        if response.status_code == 200:
-            data = response.json()
-            logs_count = 0
-
-            # Print each log entry
-            for stream in data['data']['result']:
-                logs_count += len(stream['values'])
-                for value in stream['values']:
-                    log_content = json.loads(value[1])
-                    if current_date < log_content["time"]:
-                        current_date = log_content["time"]
-                        # print("update current date", current_date)
-                    match = pattern.search(log_content["log"])
-                    if match:
-                        tenantDomain.add(match.group(1))
-            total_record += logs_count
-            if logs_count < 5000:
-                # print("last iteration : ", current_date, end_date, logs_count)
-                break
-        else:
-            print(f"Error: {response.status_code}")
-            print(response.text)
-    
-        time.sleep(0.05)
->>>>>>> origin/main
-
+            current_date = cur_end_date
+            cur_end_date = (pd.Timestamp(cur_end_date) + pd.Timedelta(hours=1)).isoformat().replace('+00:00', 'Z')
+            print("iteration error on date range : ", current_date, cur_end_date)
+        # time.sleep(0.05)
+    outfile.close()
 
     return str(total_record)
 
 if __name__ == "__main__":
-    start_date = '2025-01-01T00:00:00.000000000Z'
-<<<<<<< HEAD
-    end_date = '2025-01-31T23:59:59.999999999Z'
-=======
-    end_date = '2025-01-01T01:59:59.999999999Z'
->>>>>>> origin/main
-    # print(pd.Timestamp(start_date))
-    # print(pd.Timestamp(end_date))
-    # print((pd.Timestamp(start_date)).isoformat().replace('+00:00', 'Z'))
-    # print((pd.Timestamp(end_date)).isoformat().replace('+00:00', 'Z'))
-    print("Total records January = " + get_logs(start_date, end_date))
-    
-    # start_date = '2025-02-01T00:00:00.000000000Z'
-    # end_date = '2025-02-31T23:59:59.999999999Z'
-    # print("Total records February = " + get_logs(start_date, end_date))
+    start_date = '2025-03-01T00:00:00.000000000Z'
+    end_date = '2025-03-31T23:59:59.999999999Z'
 
-    # start_date = '2025-03-01T00:00:00.000000000Z'
-    # end_date = '2025-03-31T23:59:59.999999999Z'
-    # print("Total records March = " + get_logs(start_date, end_date))
+    print("Total records = " + get_logs(start_date, end_date))
     
-    with open('extracted_logs.txt', 'a', encoding='utf-8', buffering=1024*1024) as outfile:
-        for element in tenantDomain:
-            outfile.write(str(element) + '\n')
+    # with open('extracted_logs.txt', 'a', encoding='utf-8', buffering=1024*1024) as outfile:
+    #     for element in tenantDomain:
+    #         outfile.write(str(element) + '\n')
