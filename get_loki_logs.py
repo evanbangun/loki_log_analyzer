@@ -48,8 +48,8 @@ def get_logs(start_date, end_date):
 
         # Query parameters
         params = {
-            # "query": '{container="splp-gw"} |~ "Metric Name: apim:response"',
-            "query": '{container="splp-gw"}',
+            "query": '{container="splp-gw"} |~ "Metric Name: apim:response"',
+            # "query": '{container="splp-gw"}',
             "start": current_date,
             "end": cur_end_date,
             "limit": limit,
@@ -58,9 +58,9 @@ def get_logs(start_date, end_date):
 
         new_logs_found = False
         
-        # # Print the full URL with parameters
-        # full_url = f"{url}?{'&'.join(f'{k}={v}' for k, v in params.items())}"
-        # print(f"Query URL: {full_url}\n")
+        # Print the full URL with parameters
+        full_url = f"{url}?{'&'.join(f'{k}={v}' for k, v in params.items())}"
+        print(f"Query URL: {full_url}\n")
 
         # Make the request
         response = requests.get(url, params=params)
@@ -104,11 +104,7 @@ def get_logs(start_date, end_date):
     return str(total_record)
 
 if __name__ == "__main__":
-    start_date = '2025-03-01T00:00:00.000000000Z'
+    start_date = '2025-03-31T00:00:00Z'
     end_date = '2025-03-31T23:59:59.999999999Z'
 
     print("Total records = " + get_logs(start_date, end_date))
-    
-    # with open('extracted_logs.txt', 'a', encoding='utf-8', buffering=1024*1024) as outfile:
-    #     for element in tenantDomain:
-    #         outfile.write(str(element) + '\n')
