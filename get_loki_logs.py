@@ -10,7 +10,8 @@ tenantDomain = set()
 
 def get_logs(start_date, end_date):
     # Loki API endpoint
-    url = "http://localhost:3100/loki/api/v1/query_range"
+    # url = "http://localhost:3100/loki/api/v1/query_range"
+    url = "http://10.31.67.73:3100/loki/api/v1/query_range"
 
     pattern = re.compile(r'apiCreatorTenantDomain=([^,]+)')
 
@@ -59,8 +60,8 @@ def get_logs(start_date, end_date):
         new_logs_found = False
         
         # Print the full URL with parameters
-        full_url = f"{url}?{'&'.join(f'{k}={v}' for k, v in params.items())}"
-        print(f"Query URL: {full_url}\n")
+        # full_url = f"{url}?{'&'.join(f'{k}={v}' for k, v in params.items())}"
+        # print(f"Query URL: {full_url}\n")
 
         # Make the request
         response = requests.get(url, params=params)
@@ -104,7 +105,7 @@ def get_logs(start_date, end_date):
     return str(total_record)
 
 if __name__ == "__main__":
-    start_date = '2025-03-31T00:00:00Z'
-    end_date = '2025-03-31T23:59:59.999999999Z'
+    start_date = '2025-03-20T00:00:00Z'
+    end_date = '2025-04-30T23:59:59.999999999Z'
 
     print("Total records = " + get_logs(start_date, end_date))

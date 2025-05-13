@@ -7,7 +7,8 @@ server:
 
 compactor:
   shared_store: filesystem
-  working_directory: L:\loki202250302\loki202250302\loki\boltdb-shipper-compactor
+  # working_directory: L:\loki202250302\loki202250302\loki\boltdb-shipper-compactor # Januari-Februari 2025
+  working_directory: L:\loki-gateway-only\data\loki\boltdb-shipper-compactor # Maret - April 2025
 
 ingester:
   chunk_block_size: 262144
@@ -21,7 +22,7 @@ ingester:
   max_transfer_retries: 0
   wal:
     enabled: false
-    # dir: L:\loki202250302\loki202250302\loki\wal
+    dir: L:\loki-gateway-only\data\loki\wal
 
 limits_config:
   max_query_length: 744h
@@ -38,9 +39,12 @@ schema_config:
 
 storage_config:
   boltdb_shipper:
-    active_index_directory: L:\loki202250302\loki202250302\loki\boltdb-shipper-active
-    cache_location: L:\loki202250302\loki202250302\loki\boltdb-shipper-cache
+    # active_index_directory: L:\loki202250302\loki202250302\loki\boltdb-shipper-active # Januari - Februari 2025
+    # cache_location: L:\loki202250302\loki202250302\loki\boltdb-shipper-cache # Januari - Februari 2025
+    active_index_directory: L:\loki-gateway-only\data\loki\boltdb-shipper-active # Maret - April 2025
+    cache_location: L:\loki-gateway-only\data\loki\boltdb-shipper-cache # Maret - April 2025
     cache_ttl: 24h
     shared_store: filesystem
   filesystem:
-    directory: L:\loki202250302\loki202250302\loki\chunks
+    # directory: L:\loki202250302\loki202250302\loki\chunks # Januari - Februari 2025
+    directory: L:\loki-gateway-only\data\loki\chunks # Januari - Februari 2025
