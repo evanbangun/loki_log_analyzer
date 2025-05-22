@@ -19,7 +19,7 @@ def get_logs(start_date, end_date):
 
     total_record = 0
 
-    limit = os.getenv('LIMIT')
+    limit = int(os.getenv('LIMIT'))
 
     log_dir = os.getenv('LOG_DIR')
     os.makedirs(log_dir, exist_ok=True)
