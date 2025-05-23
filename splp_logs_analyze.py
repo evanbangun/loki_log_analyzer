@@ -40,6 +40,7 @@ apiCreator_to_instName = dict(zip(df_mapping["domain"], df_mapping["institution_
 def iterate_logs(date):
     total_records = 0
     processed_records = 0
+    apiCTD_string = "tenantdemo.go.id"
     
     for file in folder.iterdir():
         if not file.is_file():
@@ -57,18 +58,18 @@ def iterate_logs(date):
                 if not log_record.strip():
                     continue
                 try:
-                    total_records += 1  # Count ALL records before any filtering
+                    total_records += 1  
                     log_content = json.loads(log_record)
                     log_line = log_content["log"]
-                    if pattern_apiCTD.search(log_line).group(1) != "carbon.super":
+                    if pattern_apiCTD.search(log_line).group(1) != apiCTD_string:
                         continue
-                    processed_records += 1  # Count only carbon.super records
+                    processed_records += 1
                     yield log_content["time"], log_line, file.stem
                 except Exception:
                     continue
     
     print(f"\nTotal records in log: {total_records}")
-    print(f"Records with carbon.super: {processed_records}")
+    print(f"Records with {apiCTD_string}: {processed_records}")
 
 def parse_log_line(log_line):
     try:
