@@ -5,23 +5,22 @@ from datetime import datetime, timedelta
 import time
 import pandas as pd
 import os
-from dotenv import load_dotenv
+import yaml
 
 tenantDomain = set()
-load_dotenv()
+config = yaml.safe_load(open("config.yaml"))
 
 def get_logs(start_date, end_date):
-    # Loki API endpoint
-    url = os.getenv('LOKI_URL')
+    url = config['CONFIG']["LOKI_URL"]
 
     current_date = start_date
     cur_end_date = end_date
 
     total_record = 0
 
-    limit = int(os.getenv('LIMIT'))
+    limit = int(config['CONFIG']['LIMIT'])
 
-    log_dir = os.getenv('LOG_DIR')
+    log_dir = config['CONFIG']['LOG_DIR']
     os.makedirs(log_dir, exist_ok=True)
 
     print_time = current_date
@@ -45,9 +44,8 @@ def get_logs(start_date, end_date):
         else:
             cur_end_date = (pd.Timestamp(current_date) + pd.Timedelta(hours=1)).isoformat().replace('+00:00', 'Z')
 
-        # Query parameters
         params = {
-            "query": os.getenv('QUERY'),
+            'query': config['CONFIG']['QUERY'],
             "start": current_date,
             "end": cur_end_date,
             "limit": limit,
@@ -56,9 +54,8 @@ def get_logs(start_date, end_date):
 
         new_logs_found = False
 
-        # Make the request
-        response = requests.get(url, params=params)
-        
+        response = requests.get(url, params)
+
         if response.status_code == 200:
             data = response.json()
             logs_count = 0
@@ -74,7 +71,6 @@ def get_logs(start_date, end_date):
             if logs_count < limit and cur_end_date == end_date:
                 print("last iteration : ", current_date, cur_end_date, logs_count)
                 break
-            
             if not new_logs_found:
                 current_date = cur_end_date
                 cur_end_date = (pd.Timestamp(cur_end_date) + pd.Timedelta(hours=1)).isoformat().replace('+00:00', 'Z')
@@ -89,7 +85,7 @@ def get_logs(start_date, end_date):
     return str(total_record)
 
 if __name__ == "__main__":
-    start_date = os.getenv('START_DATE')
-    end_date = os.getenv('END_DATE')
+    start_date = config['CONFIG']['START_DATE']
+    end_date = config['CONFIG']['END_DATE']
 
     print("Total records = " + get_logs(start_date, end_date))
