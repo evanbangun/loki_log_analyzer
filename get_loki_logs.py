@@ -54,7 +54,7 @@ def get_logs(start_date, end_date):
 
         new_logs_found = False
 
-        response = requests.get(url, params)
+        response = requests.get(url, params=params, timeout=(10, 600))
 
         if response.status_code == 200:
             data = response.json()

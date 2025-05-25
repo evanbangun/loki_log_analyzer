@@ -7,6 +7,7 @@ import sys
 import pandas as pd
 import openpyxl
 import logging
+import os
 
 #API Owner pattern
 pattern_apiN = re.compile(r'apiName=([^,]+)')
@@ -29,24 +30,37 @@ pattern_uI = re.compile(r'userIp=([^,]+)')
 pattern_pRC = re.compile(r'proxyResponseCode=([^,]+)')
 pattern_tRC = re.compile(r'targetResponseCode=([^,]+)')
 
-folder = Path("logs")
+# folder = Path("logs")
+folder = Path("E:/SPLP_Logs")
+
 if not folder.exists() or not any(folder.iterdir()):
     print("'logs' folder tidak ditemukan")
     sys.exit()
 
-df_mapping = pd.read_excel("map_splp_nasional_institusi.xls")
-apiCreator_to_instName = dict(zip(df_mapping["domain"], df_mapping["institution_name"]))
+df_mapping = pd.read_excel("mapping.xlsx")
+mapping_dict = {}
 
-def iterate_logs(date):
+def fuzzy_lookup(lookup_dict, search_key):
+    if not lookup_dict:
+        return "Tidak Terdaftar"
+    for pattern_key, inst_name in lookup_dict.items():
+        if not isinstance(pattern_key, str):
+            continue
+        if pattern_key in search_key:
+            return inst_name
+    return "Tidak Terdaftar"
+
+def iterate_logs(date, iL):
     total_records = 0
     processed_records = 0
-    apiCTD_string = "tenantdemo.go.id"
-    
+    if iL not in ["1", "2"]:
+        logging.error("Invalid Interoperability Level")
+        sys.exit(1)
     for file in folder.iterdir():
         if not file.is_file():
             continue
         if date is not None:
-            if isinstance(date, tuple):  # date range
+            if isinstance(date, tuple):
                 if not (date[0] <= file.stem.split('_')[1] <= date[1]):
                     continue
             else:  
@@ -61,15 +75,14 @@ def iterate_logs(date):
                     total_records += 1  
                     log_content = json.loads(log_record)
                     log_line = log_content["log"]
-                    if pattern_apiCTD.search(log_line).group(1) != apiCTD_string:
+                    if (iL == "1" and pattern_apiCTD.search(log_line).group(1) != "carbon.super") or (iL == "2" and pattern_apiCTD.search(log_line).group(1) == "carbon.super"):
                         continue
                     processed_records += 1
                     yield log_content["time"], log_line, file.stem
                 except Exception:
                     continue
-    
     print(f"\nTotal records in log: {total_records}")
-    print(f"Records with {apiCTD_string}: {processed_records}")
+    print(f"Records Processed: {processed_records}")
 
 def parse_log_line(log_line):
     try:
@@ -87,8 +100,11 @@ def parse_log_line(log_line):
             "proxyResponseCode" : pattern_pRC.search(log_line).group(1),
             "targetResponseCode" : pattern_tRC.search(log_line).group(1),
         }
+    except AttributeError as e:
+        logging.warning(f"Failed to parse log line: Missing required field - {str(e)}")
+        return None
     except Exception as e:
-        print(e)
+        logging.error(f"Unexpected error parsing log line: {str(e)}")
         return None
 
 def normalize_dates(resultDict, all_possible_dates):
@@ -97,11 +113,10 @@ def normalize_dates(resultDict, all_possible_dates):
             data["hit_by_date"].setdefault(date, 0)
     return sorted(all_possible_dates)
 
-
-def get_logs_allDataset(date):
+def get_logs_allDataset(date, iL):
     resultDict = []
-    
-    for timestamp, log_line, log_date in iterate_logs(date):
+    file_name = f"all_dataset_{('_' + date) if date is not None else ''}_{'National' if iL == '1' else 'Internal'}"
+    for timestamp, log_line, log_date in iterate_logs(date, iL):
         match = parse_log_line(log_line)
         if match is None:
             continue
@@ -116,24 +131,23 @@ def get_logs_allDataset(date):
             "responseMediationLatency" : match["responseMediationLatency"],
             "applicationId" : match["applicationId"]
         })
-    
-    with open('all_dataset.csv', 'w', encoding='utf-8', newline='', buffering=1024*1024) as outfile:
+    with open(f'Report/{file_name}.csv', 'w', encoding='utf-8', newline='', buffering=1024*1024) as outfile:
         writer = csv.writer(outfile)
         writer.writerow(["apiName", "apiCreator", "backendLatency", "requestMediationLatency", "apiId", "applicationName", "applicationOwner","responseMediationLatency", "applicationId"])
         for data in resultDict:
             writer.writerow([data["apiName"], data["apiCreator"], data["backendLatency"], data["requestMediationLatency"], data["apiId"], data["applicationName"], data["applicationOwner"], data["responseMediationLatency"], data["applicationId"]])
 
 
-def get_logs_frequency_by_requester(date):
+def get_logs_frequency_by_requester(date, iL):
     resultDict = defaultdict(lambda: {"occurrence": 0, "hit_by_date" : defaultdict(int)})
     all_possible_dates = set()
-    for timestamp, log_line, log_date in iterate_logs(date):
+    file_name = f"frequency_by_requester{('_' + date) if date is not None else ''}_{'National' if iL == '1' else 'Internal'}"
+    for timestamp, log_line, log_date in iterate_logs(date, iL):
         match = parse_log_line(log_line)
         if match is None:
             continue
         all_possible_dates.add(log_date)
         if match["applicationOwner"] != match["apiCreator"] and match["proxyResponseCode"] == "200" and match["targetResponseCode"] == "200":
-            # append_key = ",".join([match["applicationId"], match["applicationName"], match["applicationOwner"],  match["apiName"], match["apiCreator"]])
             append_key = (match["applicationId"], match["applicationName"], match["applicationOwner"],  match["apiName"], match["apiCreator"])
             resultDict[append_key]["occurrence"] += 1
             resultDict[append_key]["hit_by_date"][log_date] += 1
@@ -143,25 +157,25 @@ def get_logs_frequency_by_requester(date):
     ws.title = "Frequency by Requester"
     ws.append(["applicationID", "applicationName", "applicationOwner", "IPPD Requester", "apiName", "IPPD pemilik API", "Occurrence"] + all_dates)
     for key, data in resultDict.items():
-        row = [key[0], key[1], key[2], apiCreator_to_instName.get(key[2], "Tidak Terdaftar"), key[3], apiCreator_to_instName.get(key[4], "Tidak Terdaftar"), data["occurrence"]]
+        row = [key[0], key[1], key[2], fuzzy_lookup(mapping_dict, key[2]), key[3], fuzzy_lookup(mapping_dict, key[4]), data["occurrence"]]
         row += [data["hit_by_date"][date] for date in all_dates]
         ws.append(row)
     for column_cells in ws.columns:
         length = max(len(str(cell.value)) for cell in column_cells)
         ws.column_dimensions[column_cells[0].column_letter].width = length + 2
-    wb.save("frequency_by_requester.xlsx")
+    wb.save(f"Report/{file_name}.xlsx")
 
 
-def get_logs_integrated_services(date):
+def get_logs_integrated_services(date, iL):
     resultDict = defaultdict(lambda: {"occurrence": 0, "hit_by_date" : defaultdict(int)})
     all_possible_dates = set()
-    for timestamp, log_line, log_date in iterate_logs(date):
+    file_name = f"integrated_services_frequency_{('_' + date) if date is not None else ''}_{'National' if iL == '1' else 'Internal'}"
+    for timestamp, log_line, log_date in iterate_logs(date, iL):
         match = parse_log_line(log_line)
         if match is None:
             continue
         all_possible_dates.add(log_date)
         if match["applicationOwner"] != match["apiCreator"] and match["proxyResponseCode"] == "200" and match["targetResponseCode"] == "200":
-            # append_key = ",".join([match["apiCreator"], match["apiName"]])
             append_key = (match["apiCreator"], match["apiName"])
             resultDict[append_key]["occurrence"] += 1
             resultDict[append_key]["hit_by_date"][log_date] += 1
@@ -171,17 +185,48 @@ def get_logs_integrated_services(date):
     ws.title = "Integrated Services Frequency"
     ws.append(["IPPD", "apiCreator", "apiName", "Occurrence"] + all_dates)
     for key, data in resultDict.items():
-        row = [apiCreator_to_instName.get(key[0], "Tidak Terdaftar"), key[0], key[1], data["occurrence"]]
+        row = [fuzzy_lookup(mapping_dict, key[0]), key[0], key[1], data["occurrence"]]
         row += [data["hit_by_date"][date] for date in all_dates]
         ws.append(row)
     for column_cells in ws.columns:
         length = max(len(str(cell.value)) for cell in column_cells)
         ws.column_dimensions[column_cells[0].column_letter].width = length + 2
-    wb.save("integrated_services_frequency.xlsx")
+    wb.save(f"Report/{file_name}.xlsx")
+
+
+def recap(date, iL):
+    resultDict = defaultdict(lambda: {"occurrence": 0})
+    file_name = f"recap_{('_' + date) if date is not None else ''}_{'National' if iL == '1' else 'Internal'}"
+    for timestamp, log_line, log_date in iterate_logs(date, iL):
+        match = parse_log_line(log_line)
+        if match is None:
+            continue
+        if match["applicationOwner"] != match["apiCreator"] and match["proxyResponseCode"] == "200" and match["targetResponseCode"] == "200":
+            append_key = (match["apiCreator"], match["apiName"], match["applicationOwner"], match["applicationName"], match["userIp"])
+            resultDict[append_key]["occurrence"] += 1
+    wb = openpyxl.Workbook()
+    ws = wb.active
+    ws.title = "Recap"
+    ws.append(["Instansi Pemilik API", "apiCreator", "apiName", "Instansi API Requester", "applicationOwner", "applicationName", "userIp", "Occurrence"])
+    for key, data in resultDict.items():
+        row = [fuzzy_lookup(mapping_dict, key[0]), key[0], key[1], fuzzy_lookup(mapping_dict, key[2]), key[2], key[3], key[4], data["occurrence"]]
+        ws.append(row)
+    for column_cells in ws.columns:
+        length = max(len(str(cell.value)) for cell in column_cells)
+        ws.column_dimensions[column_cells[0].column_letter].width = length + 2
+    wb.save(f"Report/{file_name}.xlsx")
 
 
 if __name__ == "__main__":
     try:
+        report_dir = Path("Report")
+        if not report_dir.exists():
+            os.makedirs(report_dir)
+
+        if not Path("mapping.xlsx").exists():
+            logging.error("mapping.xlsx file not found")
+            sys.exit(1)
+
         time_range = input("1. All Date\n2. Single Date\n3. Date Range\nTime Range : ")
         if time_range == "1":
             date = None
@@ -209,16 +254,28 @@ if __name__ == "__main__":
             logging.error("Invalid Time Range")
             sys.exit(1)
 
-        log_type = input("1. All Dataset\n2. Seberapa Sering Suatu Instansi melakukan hit API ke SPLP\n3. Jumlah Layanan Terintegrasi\nLog Type : ")
-        if log_type == "1":
-            get_logs_allDataset(date)
-        elif log_type == "2":
-            get_logs_frequency_by_requester(date)
-        elif log_type == "3":
-            get_logs_integrated_services(date)
+        iL = input("1. National\n2. Internal\nInteroperability Level : ")
+        if iL == "1":
+            mapping_dict = dict(zip(df_mapping["akun_nasional"], df_mapping["nama_instansi"]))
+        elif iL == "2":
+            mapping_dict = dict(zip(df_mapping["domain"], df_mapping["nama_instansi"]))
         else:
             logging.error("Invalid Log Type")
             sys.exit(1)
+
+        log_type = input("1. All Dataset\n2. Seberapa Sering Suatu Instansi melakukan hit API ke SPLP\n3. Jumlah Layanan Terintegrasi\n4. Recap Nasional\nLog Type : ")
+        if log_type == "1":
+            get_logs_allDataset(date, iL)
+        elif log_type == "2":
+            get_logs_frequency_by_requester(date, iL)
+        elif log_type == "3":
+            get_logs_integrated_services(date, iL)
+        elif log_type == "4":
+            recap(date, iL)
+        else:
+            logging.error("Invalid Log Type")
+            sys.exit(1)
+        
     except Exception as e:
         logging.error(f"An error occurred: {e}")
         sys.exit(1)
