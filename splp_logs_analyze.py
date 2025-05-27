@@ -138,65 +138,11 @@ def get_logs_allDataset(date, iL):
             writer.writerow([data["apiName"], data["apiCreator"], data["backendLatency"], data["requestMediationLatency"], data["apiId"], data["applicationName"], data["applicationOwner"], data["responseMediationLatency"], data["applicationId"]])
 
 
-def get_logs_frequency_by_requester(date, iL):
-    resultDict = defaultdict(lambda: {"occurrence": 0, "hit_by_date" : defaultdict(int)})
-    all_possible_dates = set()
-    file_name = f"frequency_by_requester{('_' + date) if isinstance(date, str) else ('_' + '-'.join(date)) if isinstance(date, tuple) else ''}_{'National' if iL == '1' else 'Internal'}"
-    for timestamp, log_line, log_date in iterate_logs(date, iL):
-        match = parse_log_line(log_line)
-        if match is None:
-            continue
-        all_possible_dates.add(log_date)
-        if match["applicationOwner"] != match["apiCreator"] and match["proxyResponseCode"] == "200" and match["targetResponseCode"] == "200":
-            append_key = (match["applicationId"], match["applicationName"], match["applicationOwner"],  match["apiName"], match["apiCreator"])
-            resultDict[append_key]["occurrence"] += 1
-            resultDict[append_key]["hit_by_date"][log_date] += 1
-    all_dates = normalize_dates(resultDict, all_possible_dates)
-    wb = openpyxl.Workbook()
-    ws = wb.active
-    ws.title = "Frequency by Requester"
-    ws.append(["applicationID", "applicationName", "applicationOwner", "IPPD Requester", "apiName", "IPPD pemilik API", "Occurrence"] + all_dates)
-    for key, data in resultDict.items():
-        row = [key[0], key[1], key[2], fuzzy_lookup(mapping_dict, key[2]), key[3], fuzzy_lookup(mapping_dict, key[4]), data["occurrence"]]
-        row += [data["hit_by_date"][date] for date in all_dates]
-        ws.append(row)
-    for column_cells in ws.columns:
-        length = max(len(str(cell.value)) for cell in column_cells)
-        ws.column_dimensions[column_cells[0].column_letter].width = length + 2
-    wb.save(f"Report/{file_name}.xlsx")
-
-
-def get_logs_integrated_services(date, iL):
-    resultDict = defaultdict(lambda: {"occurrence": 0, "hit_by_date" : defaultdict(int)})
-    all_possible_dates = set()
-    file_name = f"integrated_services_frequency_{('_' + date) if isinstance(date, str) else ('_' + '-'.join(date)) if isinstance(date, tuple) else ''}_{'National' if iL == '1' else 'Internal'}"
-    for timestamp, log_line, log_date in iterate_logs(date, iL):
-        match = parse_log_line(log_line)
-        if match is None:
-            continue
-        all_possible_dates.add(log_date)
-        if match["applicationOwner"] != match["apiCreator"] and match["proxyResponseCode"] == "200" and match["targetResponseCode"] == "200":
-            append_key = (match["apiCreator"], match["apiName"])
-            resultDict[append_key]["occurrence"] += 1
-            resultDict[append_key]["hit_by_date"][log_date] += 1
-    all_dates = normalize_dates(resultDict, all_possible_dates)
-    wb = openpyxl.Workbook()
-    ws = wb.active
-    ws.title = "Integrated Services Frequency"
-    ws.append(["IPPD", "apiCreator", "apiName", "Occurrence"] + all_dates)
-    for key, data in resultDict.items():
-        row = [fuzzy_lookup(mapping_dict, key[0]), key[0], key[1], data["occurrence"]]
-        row += [data["hit_by_date"][date] for date in all_dates]
-        ws.append(row)
-    for column_cells in ws.columns:
-        length = max(len(str(cell.value)) for cell in column_cells)
-        ws.column_dimensions[column_cells[0].column_letter].width = length + 2
-    wb.save(f"Report/{file_name}.xlsx")
-
-
 def recap(date, iL):
-    resultDict = defaultdict(lambda: {"occurrence": 0})
-    file_name = f"recap_{('_' + date) if isinstance(date, str) else ('_' + '-'.join(date)) if isinstance(date, tuple) else ''}_{'National' if iL == '1' else 'Internal'}"
+    resultDict = defaultdict(lambda: {"occurrence": 0, "hit_by_date": defaultdict(int)})
+    all_possible_dates = set()
+    view_type = input("Choose view type:\n1. Aggregated \n2. Daily \nView Type: ")
+    file_name = f"recap_{('_' + date) if isinstance(date, str) else ('_' + '-'.join(date)) if isinstance(date, tuple) else ''}_{'National' if iL == '1' else 'Internal'}_{'Aggregated' if view_type == '1' else 'Daily'}"
     for timestamp, log_line, log_date in iterate_logs(date, iL):
         match = parse_log_line(log_line)
         if match is None:
@@ -204,13 +150,26 @@ def recap(date, iL):
         if match["applicationOwner"] != match["apiCreator"] and match["proxyResponseCode"] == "200" and match["targetResponseCode"] == "200":
             append_key = (match["apiCreator"], match["apiName"], match["applicationOwner"], match["applicationName"], match["userIp"])
             resultDict[append_key]["occurrence"] += 1
+            resultDict[append_key]["hit_by_date"][log_date] += 1
+            all_possible_dates.add(log_date)
+    all_dates = normalize_dates(resultDict, all_possible_dates)
     wb = openpyxl.Workbook()
     ws = wb.active
     ws.title = "Recap"
-    ws.append(["Instansi Pemilik API", "apiCreator", "apiName", "Instansi API Requester", "applicationOwner", "applicationName", "userIp", "Occurrence"])
-    for key, data in resultDict.items():
-        row = [fuzzy_lookup(mapping_dict, key[0]), key[0], key[1], fuzzy_lookup(mapping_dict, key[2]), key[2], key[3], key[4], data["occurrence"]]
-        ws.append(row)
+    if view_type == "1":
+        ws.append(["Instansi Pemilik API", "apiCreator", "apiName", "Instansi API Requester", "applicationOwner", "applicationName", "userIp", "Occurrence"])
+        for key, data in resultDict.items():
+            row = [fuzzy_lookup(mapping_dict, key[0]), key[0], key[1], fuzzy_lookup(mapping_dict, key[2]), key[2], key[3], key[4], data["occurrence"]]
+            ws.append(row)
+    elif view_type == "2":
+        ws.append(["Instansi Pemilik API", "apiCreator", "apiName", "Instansi API Requester", "applicationOwner", "applicationName", "userIp", "Occurrence"] + all_dates)
+        for key, data in resultDict.items():
+            row = [fuzzy_lookup(mapping_dict, key[0]), key[0], key[1], fuzzy_lookup(mapping_dict, key[2]), key[2], key[3], key[4], data["occurrence"]]
+            row += [data["hit_by_date"][date] for date in all_dates]
+            ws.append(row)
+    else:
+        logging.error("Invalid view type selected")
+        sys.exit(1)
     for column_cells in ws.columns:
         length = max(len(str(cell.value)) for cell in column_cells)
         ws.column_dimensions[column_cells[0].column_letter].width = length + 2
@@ -262,14 +221,10 @@ if __name__ == "__main__":
             logging.error("Invalid Log Type")
             sys.exit(1)
 
-        log_type = input("1. All Dataset\n2. Seberapa Sering Suatu Instansi melakukan hit API ke SPLP\n3. Jumlah Layanan Terintegrasi\n4. Recap\nLog Type : ")
+        log_type = input("1. All Dataset\n2. Recap\nLog Type : ")
         if log_type == "1":
             get_logs_allDataset(date, iL)
         elif log_type == "2":
-            get_logs_frequency_by_requester(date, iL)
-        elif log_type == "3":
-            get_logs_integrated_services(date, iL)
-        elif log_type == "4":
             recap(date, iL)
         else:
             logging.error("Invalid Log Type")
