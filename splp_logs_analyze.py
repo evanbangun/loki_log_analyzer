@@ -87,19 +87,19 @@ def iterate_logs(date, iL):
 def parse_log_line(log_line):
     try:
         return {
-            "apiName" : pattern_apiN.search(log_line).group(1),
-            "apiCreator" : pattern_apiC.search(log_line).group(1),
-            "apiId" : pattern_apiI.search(log_line).group(1),
-            "backendLatency" : pattern_bL.search(log_line).group(1),
-            "requestMediationLatency" : pattern_reqML.search(log_line).group(1),
-            "responseMediationLatency" : pattern_resML.search(log_line).group(1),
-            "applicationId" : pattern_appI.search(log_line).group(1),
-            "applicationName" : pattern_appN.search(log_line).group(1),
-            "applicationOwner" : pattern_appO.search(log_line).group(1),
-            "userIp" : pattern_uI.search(log_line).group(1),
-            "proxyResponseCode" : pattern_pRC.search(log_line).group(1),
-            "targetResponseCode" : pattern_tRC.search(log_line).group(1),
-        }
+                "apiName" : pattern_apiN.search(log_line).group(1) if pattern_apiN.search(log_line) else None,
+                "apiCreator" : pattern_apiC.search(log_line).group(1) if pattern_apiC.search(log_line) else None,
+                "apiId" : pattern_apiI.search(log_line).group(1) if pattern_apiI.search(log_line) else None,
+                "backendLatency" : pattern_bL.search(log_line).group(1) if pattern_bL.search(log_line) else None,
+                "requestMediationLatency" : pattern_reqML.search(log_line).group(1) if pattern_reqML.search(log_line) else None,
+                "responseMediationLatency" : pattern_resML.search(log_line).group(1) if pattern_resML.search(log_line) else None,
+                "applicationId" : pattern_appI.search(log_line).group(1) if pattern_appI.search(log_line) else None,
+                "applicationName" : pattern_appN.search(log_line).group(1) if pattern_appN.search(log_line) else None,
+                "applicationOwner" : pattern_appO.search(log_line).group(1) if pattern_appO.search(log_line) else None,
+                "userIp" : pattern_uI.search(log_line).group(1) if pattern_uI.search(log_line) else None,
+                "proxyResponseCode" : pattern_pRC.search(log_line).group(1) if pattern_pRC.search(log_line) else None,
+                "targetResponseCode" : pattern_tRC.search(log_line).group(1) if pattern_tRC.search(log_line) else None
+            }
     except AttributeError as e:
         logging.warning(f"Failed to parse log line: Missing required field - {str(e)}")
         return None
@@ -115,7 +115,7 @@ def normalize_dates(resultDict, all_possible_dates):
 
 def get_logs_allDataset(date, iL):
     resultDict = []
-    file_name = f"all_dataset_{('_' + date) if date is not None else ''}_{'National' if iL == '1' else 'Internal'}"
+    file_name = f"all_dataset{('_' + date) if isinstance(date, str) else ('_' + '-'.join(date)) if isinstance(date, tuple) else ''}_{'National' if iL == '1' else 'Internal'}"
     for timestamp, log_line, log_date in iterate_logs(date, iL):
         match = parse_log_line(log_line)
         if match is None:
@@ -141,7 +141,7 @@ def get_logs_allDataset(date, iL):
 def get_logs_frequency_by_requester(date, iL):
     resultDict = defaultdict(lambda: {"occurrence": 0, "hit_by_date" : defaultdict(int)})
     all_possible_dates = set()
-    file_name = f"frequency_by_requester{('_' + date) if date is not None else ''}_{'National' if iL == '1' else 'Internal'}"
+    file_name = f"frequency_by_requester{('_' + date) if isinstance(date, str) else ('_' + '-'.join(date)) if isinstance(date, tuple) else ''}_{'National' if iL == '1' else 'Internal'}"
     for timestamp, log_line, log_date in iterate_logs(date, iL):
         match = parse_log_line(log_line)
         if match is None:
@@ -169,7 +169,7 @@ def get_logs_frequency_by_requester(date, iL):
 def get_logs_integrated_services(date, iL):
     resultDict = defaultdict(lambda: {"occurrence": 0, "hit_by_date" : defaultdict(int)})
     all_possible_dates = set()
-    file_name = f"integrated_services_frequency_{('_' + date) if date is not None else ''}_{'National' if iL == '1' else 'Internal'}"
+    file_name = f"integrated_services_frequency_{('_' + date) if isinstance(date, str) else ('_' + '-'.join(date)) if isinstance(date, tuple) else ''}_{'National' if iL == '1' else 'Internal'}"
     for timestamp, log_line, log_date in iterate_logs(date, iL):
         match = parse_log_line(log_line)
         if match is None:
@@ -196,7 +196,7 @@ def get_logs_integrated_services(date, iL):
 
 def recap(date, iL):
     resultDict = defaultdict(lambda: {"occurrence": 0})
-    file_name = f"recap_{('_' + date) if date is not None else ''}_{'National' if iL == '1' else 'Internal'}"
+    file_name = f"recap_{('_' + date) if isinstance(date, str) else ('_' + '-'.join(date)) if isinstance(date, tuple) else ''}_{'National' if iL == '1' else 'Internal'}"
     for timestamp, log_line, log_date in iterate_logs(date, iL):
         match = parse_log_line(log_line)
         if match is None:
@@ -239,10 +239,9 @@ if __name__ == "__main__":
                 sys.exit(1)
         elif time_range == "3":
             date = input("Enter Date Range (YYYY-MM-DD//YYYY-MM-DD) : ")
-            start_date, end_date = date.split("//")
             try:
-                start_date = pd.to_datetime(start_date)
-                end_date = pd.to_datetime(end_date)
+                start_date = pd.to_datetime(date.split("//")[0])
+                end_date = pd.to_datetime(date.split("//")[1])
                 if start_date >= end_date:
                     logging.error("Invalid Date Range: Start date must be before end date")
                     sys.exit(1)
@@ -263,7 +262,7 @@ if __name__ == "__main__":
             logging.error("Invalid Log Type")
             sys.exit(1)
 
-        log_type = input("1. All Dataset\n2. Seberapa Sering Suatu Instansi melakukan hit API ke SPLP\n3. Jumlah Layanan Terintegrasi\n4. Recap Nasional\nLog Type : ")
+        log_type = input("1. All Dataset\n2. Seberapa Sering Suatu Instansi melakukan hit API ke SPLP\n3. Jumlah Layanan Terintegrasi\n4. Recap\nLog Type : ")
         if log_type == "1":
             get_logs_allDataset(date, iL)
         elif log_type == "2":
