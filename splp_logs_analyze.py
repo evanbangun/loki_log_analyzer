@@ -34,11 +34,15 @@ pattern_tRC = re.compile(r'targetResponseCode=([^,]+)')
 folder = Path("E:/SPLP_Logs")
 
 if not folder.exists() or not any(folder.iterdir()):
-    print("'logs' folder tidak ditemukan")
+    print("folder 'logs' tidak ditemukan")
     sys.exit()
 
 df_mapping = pd.read_excel("mapping.xlsx")
 mapping_dict = {}
+
+def data_cleansing(log_line):
+    clean_word = ["dummy", "admin", "bimtek", "demo", "internal-key-app", "test"]
+    return any(word in log_line for word in clean_word)
 
 def fuzzy_lookup(lookup_dict, search_key):
     if not lookup_dict:
@@ -50,7 +54,7 @@ def fuzzy_lookup(lookup_dict, search_key):
             return inst_name
     return "Tidak Terdaftar"
 
-def iterate_logs(date, iL):
+def iterate_logs(date, iL, cleanse_data):
     total_records = 0
     processed_records = 0
     if iL not in ["1", "2"]:
@@ -76,6 +80,8 @@ def iterate_logs(date, iL):
                     log_content = json.loads(log_record)
                     log_line = log_content["log"]
                     if (iL == "1" and pattern_apiCTD.search(log_line).group(1) != "carbon.super") or (iL == "2" and pattern_apiCTD.search(log_line).group(1) == "carbon.super"):
+                        continue
+                    if cleanse_data and data_cleansing(str(log_line)):
                         continue
                     processed_records += 1
                     yield log_content["time"], log_line, file.stem
@@ -113,10 +119,10 @@ def normalize_dates(resultDict, all_possible_dates):
             data["hit_by_date"].setdefault(date, 0)
     return sorted(all_possible_dates)
 
-def get_logs_allDataset(date, iL):
+def get_logs_allDataset(date, iL, cleanse_data):
     resultDict = []
     file_name = f"all_dataset{('_' + date) if isinstance(date, str) else ('_' + '-'.join(date)) if isinstance(date, tuple) else ''}_{'National' if iL == '1' else 'Internal'}"
-    for timestamp, log_line, log_date in iterate_logs(date, iL):
+    for timestamp, log_line, log_date in iterate_logs(date, iL, cleanse_data):
         match = parse_log_line(log_line)
         if match is None:
             continue
@@ -138,12 +144,12 @@ def get_logs_allDataset(date, iL):
             writer.writerow([data["apiName"], data["apiCreator"], data["backendLatency"], data["requestMediationLatency"], data["apiId"], data["applicationName"], data["applicationOwner"], data["responseMediationLatency"], data["applicationId"]])
 
 
-def recap(date, iL):
+def recap(date, iL, cleanse_data):
     resultDict = defaultdict(lambda: {"occurrence": 0, "hit_by_date": defaultdict(int)})
     all_possible_dates = set()
     view_type = input("Choose view type:\n1. Aggregated \n2. Daily \nView Type: ")
     file_name = f"recap_{('_' + date) if isinstance(date, str) else ('_' + '-'.join(date)) if isinstance(date, tuple) else ''}_{'National' if iL == '1' else 'Internal'}_{'Aggregated' if view_type == '1' else 'Daily'}"
-    for timestamp, log_line, log_date in iterate_logs(date, iL):
+    for timestamp, log_line, log_date in iterate_logs(date, iL, cleanse_data):
         match = parse_log_line(log_line)
         if match is None:
             continue
@@ -221,11 +227,18 @@ if __name__ == "__main__":
             logging.error("Invalid Log Type")
             sys.exit(1)
 
+        cleanse_data_input = input("Cleanse Data ? (Y/n): ")
+        if cleanse_data_input.lower() not in ['y', 'n']:
+            logging.error("Invalid Input")
+            sys.exit(1)
+        else:
+            cleanse_data = cleanse_data_input.lower() == "y"
+
         log_type = input("1. All Dataset\n2. Recap\nLog Type : ")
         if log_type == "1":
-            get_logs_allDataset(date, iL)
+            get_logs_allDataset(date, iL, cleanse_data)
         elif log_type == "2":
-            recap(date, iL)
+            recap(date, iL, cleanse_data)
         else:
             logging.error("Invalid Log Type")
             sys.exit(1)
