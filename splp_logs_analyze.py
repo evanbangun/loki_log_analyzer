@@ -8,6 +8,7 @@ import pandas as pd
 import openpyxl
 import logging
 import os
+from datetime import datetime
 
 #API Owner pattern
 pattern_apiN = re.compile(r'apiName=([^,]+)')
@@ -31,10 +32,10 @@ pattern_pRC = re.compile(r'proxyResponseCode=([^,]+)')
 pattern_tRC = re.compile(r'targetResponseCode=([^,]+)')
 
 # folder = Path("logs")
-folder = Path("E:/SPLP_Logs")
+folder = Path("D:/SPLP_Logs")
 
 if not folder.exists() or not any(folder.iterdir()):
-    print("folder 'logs' tidak ditemukan")
+    print("folder berisi logs tidak ditemukan")
     sys.exit()
 
 df_mapping = pd.read_excel("mapping.xlsx")
@@ -181,17 +182,50 @@ def recap(date, iL, cleanse_data):
         ws.column_dimensions[column_cells[0].column_letter].width = length + 2
     wb.save(f"Report/{file_name}.xlsx")
 
-
+def calculate_max_concurrent_hits(date, iL, cleanse_data):
+    hits_per_second = defaultdict(int)
+    max_hits = 0
+    max_hits_timestamp = None
+    print("Calculating concurrent hits...")
+    for timestamp, log_line, log_date in iterate_logs(date, iL, cleanse_data):
+        try:
+            dt = datetime.fromisoformat(timestamp.replace('Z', '+00:00'))
+            second_key = dt.strftime('%Y-%m-%d %H:%M:%S')
+            hits_per_second[second_key] += 1
+            if hits_per_second[second_key] > max_hits:
+                max_hits = hits_per_second[second_key]
+                max_hits_timestamp = second_key
+        except Exception as e:
+            logging.warning(f"Failed to process timestamp: {timestamp} - {str(e)}")
+            continue
+    file_name = f"concurrent_hits_{('_' + date) if isinstance(date, str) else ('_' + '-'.join(date)) if isinstance(date, tuple) else ''}_{'National' if iL == '1' else 'Internal'}"
+    with open(f'Report/{file_name}.csv', 'w', encoding='utf-8', newline='') as outfile:
+        writer = csv.writer(outfile)
+        writer.writerow(['Timestamp', 'Hits'])
+        for timestamp, hits in sorted(hits_per_second.items()):
+            writer.writerow([timestamp, hits])
+    print(f"\nMaximum concurrent hits: {max_hits}")
+    print(f"Timestamp of maximum hits: {max_hits_timestamp}")
+    wb = openpyxl.Workbook()
+    ws = wb.active
+    ws.title = "Concurrent Hits Summary"
+    ws.append(['Metric', 'Value'])
+    ws.append(['Maximum Concurrent Hits', max_hits])
+    ws.append(['Timestamp of Maximum Hits', max_hits_timestamp])
+    ws.append(['Total Unique Seconds', len(hits_per_second)])
+    ws.append(['Average Hits per Second', sum(hits_per_second.values()) / len(hits_per_second)])
+    for column_cells in ws.columns:
+        length = max(len(str(cell.value)) for cell in column_cells)
+        ws.column_dimensions[column_cells[0].column_letter].width = length + 2
+    wb.save(f"Report/{file_name}_summary.xlsx")
 if __name__ == "__main__":
     try:
         report_dir = Path("Report")
         if not report_dir.exists():
             os.makedirs(report_dir)
-
         if not Path("mapping.xlsx").exists():
             logging.error("mapping.xlsx file not found")
             sys.exit(1)
-
         time_range = input("1. All Date\n2. Single Date\n3. Date Range\nTime Range : ")
         if time_range == "1":
             date = None
@@ -217,7 +251,6 @@ if __name__ == "__main__":
         else:
             logging.error("Invalid Time Range")
             sys.exit(1)
-
         iL = input("1. National\n2. Internal\nInteroperability Level : ")
         if iL == "1":
             mapping_dict = dict(zip(df_mapping["akun_nasional"], df_mapping["nama_instansi"]))
@@ -226,24 +259,22 @@ if __name__ == "__main__":
         else:
             logging.error("Invalid Log Type")
             sys.exit(1)
-
         cleanse_data_input = input("Cleanse Data ? (Y/n): ")
         if cleanse_data_input.lower() not in ['y', 'n']:
             logging.error("Invalid Input")
             sys.exit(1)
         else:
             cleanse_data = cleanse_data_input.lower() == "y"
-
-        log_type = input("1. All Dataset\n2. Recap\nLog Type : ")
+        log_type = input("1. All Dataset\n2. Recap\n3. Concurrent Hits\nLog Type : ")
         if log_type == "1":
             get_logs_allDataset(date, iL, cleanse_data)
         elif log_type == "2":
             recap(date, iL, cleanse_data)
+        elif log_type == "3":
+            calculate_max_concurrent_hits(date, iL, cleanse_data)
         else:
             logging.error("Invalid Log Type")
             sys.exit(1)
-        
     except Exception as e:
         logging.error(f"An error occurred: {e}")
         sys.exit(1)
-    

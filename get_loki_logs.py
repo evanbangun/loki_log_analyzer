@@ -114,7 +114,7 @@ def get_logs_parquet(start_date, end_date):
     print("iterating through : ", (pd.Timestamp(current_date)).date())
 
     while current_date < end_date:
-        if (pd.Timestamp(current_date)).day != (pd.Timestamp(current_date + pd.Timedelta(hours=1))).day:
+        if (pd.Timestamp(current_date)).day != (pd.Timestamp(current_date) + pd.Timedelta(hours=1)).day:
             if current_logs:
                 write_logs_to_parquet(current_logs, current_date, log_dir)
                 current_logs = []
