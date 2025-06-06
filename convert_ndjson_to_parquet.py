@@ -177,8 +177,8 @@ def get_date_range():
         print(f"Error: {str(e)}")
 
 def convert_ndjson_to_parquet():
-    ndjson_dir = "E:/SPLP_Logs"
-    parquet_dir = "E:/SPLP_Logs_parquet"
+    ndjson_dir = "logs"
+    parquet_dir = "D:/SPLP_Logs_parquet"
     
     start_date, end_date = get_date_range()
     
