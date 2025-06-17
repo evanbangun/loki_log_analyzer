@@ -32,7 +32,7 @@ pattern_pRC = re.compile(r'proxyResponseCode=([^,]+)')
 pattern_tRC = re.compile(r'targetResponseCode=([^,]+)')
 
 # folder = Path("logs")
-folder = Path("D:/SPLP_Logs")
+folder = Path("E:/SPLP_Logs")
 
 if not folder.exists() or not any(folder.iterdir()):
     print("folder berisi logs tidak ditemukan")
@@ -97,6 +97,7 @@ def parse_log_line(log_line):
                 "apiName" : pattern_apiN.search(log_line).group(1) if pattern_apiN.search(log_line) else None,
                 "apiCreator" : pattern_apiC.search(log_line).group(1) if pattern_apiC.search(log_line) else None,
                 "apiId" : pattern_apiI.search(log_line).group(1) if pattern_apiI.search(log_line) else None,
+                "apiCreatorTenantDomain" : pattern_apiCTD.search(log_line).group(1) if pattern_apiCTD.search(log_line) else None,
                 "backendLatency" : pattern_bL.search(log_line).group(1) if pattern_bL.search(log_line) else None,
                 "requestMediationLatency" : pattern_reqML.search(log_line).group(1) if pattern_reqML.search(log_line) else None,
                 "responseMediationLatency" : pattern_resML.search(log_line).group(1) if pattern_resML.search(log_line) else None,
@@ -155,7 +156,7 @@ def recap(date, iL, cleanse_data):
         if match is None:
             continue
         if match["applicationOwner"] != match["apiCreator"] and match["proxyResponseCode"] == "200" and match["targetResponseCode"] == "200":
-            append_key = (match["apiCreator"], match["apiName"], match["applicationOwner"], match["applicationName"], match["userIp"])
+            append_key = (match["apiCreator"], match["apiName"], match["applicationOwner"], match["applicationName"], match["userIp"], match["apiCreatorTenantDomain"])
             resultDict[append_key]["occurrence"] += 1
             resultDict[append_key]["hit_by_date"][log_date] += 1
             all_possible_dates.add(log_date)
@@ -164,14 +165,14 @@ def recap(date, iL, cleanse_data):
     ws = wb.active
     ws.title = "Recap"
     if view_type == "1":
-        ws.append(["Instansi Pemilik API", "apiCreator", "apiName", "Instansi API Requester", "applicationOwner", "applicationName", "userIp", "Occurrence"])
+        ws.append(["Instansi Pemilik API", "apiCreator", "apiName", "Instansi API Requester", "apiCreatorTenantDomain", "applicationOwner", "applicationName", "userIp", "Occurrence"])
         for key, data in resultDict.items():
-            row = [fuzzy_lookup(mapping_dict, key[0]), key[0], key[1], fuzzy_lookup(mapping_dict, key[2]), key[2], key[3], key[4], data["occurrence"]]
+            row = [fuzzy_lookup(mapping_dict, key[0]), key[0], key[1], fuzzy_lookup(mapping_dict, key[2]), key[5], key[2], key[3], key[4], data["occurrence"]]
             ws.append(row)
     elif view_type == "2":
-        ws.append(["Instansi Pemilik API", "apiCreator", "apiName", "Instansi API Requester", "applicationOwner", "applicationName", "userIp", "Occurrence"] + all_dates)
+        ws.append(["Instansi Pemilik API", "apiCreator", "apiName", "Instansi API Requester", "apiCreatorTenantDomain", "applicationOwner", "applicationName", "userIp", "Occurrence"] + all_dates)
         for key, data in resultDict.items():
-            row = [fuzzy_lookup(mapping_dict, key[0]), key[0], key[1], fuzzy_lookup(mapping_dict, key[2]), key[2], key[3], key[4], data["occurrence"]]
+            row = [fuzzy_lookup(mapping_dict, key[0]), key[0], key[1], fuzzy_lookup(mapping_dict, key[2]), key[5], key[2], key[3], key[4], data["occurrence"]]
             row += [data["hit_by_date"][date] for date in all_dates]
             ws.append(row)
     else:
@@ -221,62 +222,58 @@ def calculate_max_concurrent_hits(date, iL, cleanse_data):
 
     
 if __name__ == "__main__":
-    try:
-        report_dir = Path("Report")
-        if not report_dir.exists():
-            os.makedirs(report_dir)
-        if not Path("mapping.xlsx").exists():
-            logging.error("mapping.xlsx file not found")
+    report_dir = Path("Report")
+    if not report_dir.exists():
+        os.makedirs(report_dir)
+    if not Path("mapping.xlsx").exists():
+        logging.error("mapping.xlsx file not found")
+        sys.exit(1)
+    time_range = input("1. All Date\n2. Single Date\n3. Date Range\nTime Range : ")
+    if time_range == "1":
+        date = None
+    elif time_range == "2":
+        date = input("Enter Date (YYYY-MM-DD) : ")
+        try:
+            pd.to_datetime(date)
+        except ValueError:
+            logging.error("Invalid date format. Please use YYYY-MM-DD format.")
             sys.exit(1)
-        time_range = input("1. All Date\n2. Single Date\n3. Date Range\nTime Range : ")
-        if time_range == "1":
-            date = None
-        elif time_range == "2":
-            date = input("Enter Date (YYYY-MM-DD) : ")
-            try:
-                pd.to_datetime(date)
-            except ValueError:
-                logging.error("Invalid date format. Please use YYYY-MM-DD format.")
+    elif time_range == "3":
+        date = input("Enter Date Range (YYYY-MM-DD//YYYY-MM-DD) : ")
+        try:
+            start_date = pd.to_datetime(date.split("//")[0])
+            end_date = pd.to_datetime(date.split("//")[1])
+            if start_date >= end_date:
+                logging.error("Invalid Date Range: Start date must be before end date")
                 sys.exit(1)
-        elif time_range == "3":
-            date = input("Enter Date Range (YYYY-MM-DD//YYYY-MM-DD) : ")
-            try:
-                start_date = pd.to_datetime(date.split("//")[0])
-                end_date = pd.to_datetime(date.split("//")[1])
-                if start_date >= end_date:
-                    logging.error("Invalid Date Range: Start date must be before end date")
-                    sys.exit(1)
-                date = (start_date.strftime("%Y-%m-%d"), end_date.strftime("%Y-%m-%d"))
-            except ValueError:
-                logging.error("Invalid date format. Please use YYYY-MM-DD format.")
-                sys.exit(1)
-        else:
-            logging.error("Invalid Time Range")
+            date = (start_date.strftime("%Y-%m-%d"), end_date.strftime("%Y-%m-%d"))
+        except ValueError:
+            logging.error("Invalid date format. Please use YYYY-MM-DD format.")
             sys.exit(1)
-        iL = input("1. National\n2. Internal\nInteroperability Level : ")
-        if iL == "1":
-            mapping_dict = dict(zip(df_mapping["akun_nasional"], df_mapping["nama_instansi"]))
-        elif iL == "2":
-            mapping_dict = dict(zip(df_mapping["domain"], df_mapping["nama_instansi"]))
-        else:
-            logging.error("Invalid Log Type")
-            sys.exit(1)
-        cleanse_data_input = input("Cleanse Data ? (Y/n): ")
-        if cleanse_data_input.lower() not in ['y', 'n']:
-            logging.error("Invalid Input")
-            sys.exit(1)
-        else:
-            cleanse_data = cleanse_data_input.lower() == "y"
-        log_type = input("1. All Dataset\n2. Recap\n3. Concurrent Hits\nLog Type : ")
-        if log_type == "1":
-            get_logs_allDataset(date, iL, cleanse_data)
-        elif log_type == "2":
-            recap(date, iL, cleanse_data)
-        elif log_type == "3":
-            calculate_max_concurrent_hits(date, iL, cleanse_data)
-        else:
-            logging.error("Invalid Log Type")
-            sys.exit(1)
-    except Exception as e:
-        logging.error(f"An error occurred: {e}")
+    else:
+        logging.error("Invalid Time Range")
+        sys.exit(1)
+    iL = input("1. National\n2. Internal\nInteroperability Level : ")
+    if iL == "1":
+        mapping_dict = dict(zip(df_mapping["Akun Nasional"], df_mapping["Nama Instansi"]))
+    elif iL == "2":
+        mapping_dict = dict(zip(df_mapping["Domain"], df_mapping["Nama Instansi"]))
+    else:
+        logging.error("Invalid Log Type")
+        sys.exit(1)
+    cleanse_data_input = input("Cleanse Data ? (Y/n): ")
+    if cleanse_data_input.lower() not in ['y', 'n']:
+        logging.error("Invalid Input")
+        sys.exit(1)
+    else:
+        cleanse_data = cleanse_data_input.lower() == "y"
+    log_type = input("1. All Dataset\n2. Recap\n3. Concurrent Hits\nLog Type : ")
+    if log_type == "1":
+        get_logs_allDataset(date, iL, cleanse_data)
+    elif log_type == "2":
+        recap(date, iL, cleanse_data)
+    elif log_type == "3":
+        calculate_max_concurrent_hits(date, iL, cleanse_data)
+    else:
+        logging.error("Invalid Log Type")
         sys.exit(1)
