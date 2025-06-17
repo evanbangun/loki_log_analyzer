@@ -218,6 +218,8 @@ def calculate_max_concurrent_hits(date, iL, cleanse_data):
         length = max(len(str(cell.value)) for cell in column_cells)
         ws.column_dimensions[column_cells[0].column_letter].width = length + 2
     wb.save(f"Report/{file_name}_summary.xlsx")
+
+    
 if __name__ == "__main__":
     try:
         report_dir = Path("Report")
