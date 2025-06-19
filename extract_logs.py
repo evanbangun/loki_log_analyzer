@@ -10,7 +10,7 @@ import logging
 import os
 from datetime import datetime
 
-folder = Path("E:/SPLP_Logs")
+folder = Path("D:/SPLP_Logs")
 
 if not folder.exists() or not any(folder.iterdir()):
     print("'logs' folder tidak ditemukan")

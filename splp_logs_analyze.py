@@ -32,7 +32,7 @@ pattern_pRC = re.compile(r'proxyResponseCode=([^,]+)')
 pattern_tRC = re.compile(r'targetResponseCode=([^,]+)')
 
 # folder = Path("logs")
-folder = Path("E:/SPLP_Logs")
+folder = Path("D:/SPLP_Logs")
 
 if not folder.exists() or not any(folder.iterdir()):
     print("folder berisi logs tidak ditemukan")
