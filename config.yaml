@@ -1,8 +1,8 @@
 CONFIG:
   LOKI_URL: "http://10.31.67.116:3100/loki/api/v1/query_range"
-  START_DATE: "2025-05-28T00:00:00Z"
-  END_DATE: "2025-05-31T23:59:59.999999999Z"
+  START_DATE: "2025-06-16T00:00:00Z"
+  END_DATE: "2025-06-18T23:59:59.999999999Z"
   QUERY: '{container="splp-gw"} |~ "Metric Name: apim:response"'
-  LIMIT: 5000
+  LIMIT: 500
   LOG_DIR_NDJSON: logs
   LOG_DIR_PARQUET: parquet_logs

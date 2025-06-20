@@ -32,18 +32,21 @@ pattern_pRC = re.compile(r'proxyResponseCode=([^,]+)')
 pattern_tRC = re.compile(r'targetResponseCode=([^,]+)')
 
 # folder = Path("logs")
-folder = Path("D:/SPLP_Logs")
+folder = Path("E:/SPLP_Logs")
 
 if not folder.exists() or not any(folder.iterdir()):
     print("folder berisi logs tidak ditemukan")
     sys.exit()
 
+
 df_mapping = pd.read_excel("mapping.xlsx")
 mapping_dict = {}
+
 
 def data_cleansing(log_line):
     clean_word = ["dummy", "admin", "bimtek", "demo", "internal-key-app", "test"]
     return any(word in log_line for word in clean_word)
+
 
 def fuzzy_lookup(lookup_dict, search_key):
     if not lookup_dict:
@@ -54,6 +57,7 @@ def fuzzy_lookup(lookup_dict, search_key):
         if pattern_key in search_key:
             return inst_name
     return "Tidak Terdaftar"
+
 
 def iterate_logs(date, iL, cleanse_data):
     total_records = 0
@@ -91,6 +95,7 @@ def iterate_logs(date, iL, cleanse_data):
     print(f"\nTotal records in log: {total_records}")
     print(f"Records Processed: {processed_records}")
 
+
 def parse_log_line(log_line):
     try:
         return {
@@ -115,11 +120,13 @@ def parse_log_line(log_line):
         logging.error(f"Unexpected error parsing log line: {str(e)}")
         return None
 
+
 def normalize_dates(resultDict, all_possible_dates):
     for data in resultDict.values():
         for date in all_possible_dates:
             data["hit_by_date"].setdefault(date, 0)
     return sorted(all_possible_dates)
+
 
 def get_logs_allDataset(date, iL, cleanse_data):
     resultDict = []
@@ -182,6 +189,7 @@ def recap(date, iL, cleanse_data):
         length = max(len(str(cell.value)) for cell in column_cells)
         ws.column_dimensions[column_cells[0].column_letter].width = length + 2
     wb.save(f"Report/{file_name}.xlsx")
+
 
 def calculate_max_concurrent_hits(date, iL, cleanse_data):
     hits_per_second = defaultdict(int)
