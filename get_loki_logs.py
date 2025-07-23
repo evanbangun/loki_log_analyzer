@@ -186,6 +186,7 @@ def get_logs_ndjson(start_date, end_date):
     print("iterating through : ", (pd.Timestamp(current_date)).date())
 
     while current_date < end_date:
+        print(current_date)
         if (pd.Timestamp(print_time)).day != (pd.Timestamp(current_date)).day:
             outfile.close()
             print_time = current_date

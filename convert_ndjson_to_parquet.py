@@ -11,7 +11,6 @@ import pyarrow.parquet as pq
 import sys
 
 tenantDomain = set()
-config = yaml.safe_load(open("config.yaml"))
 
 def parse_log_content(log_content):
     """Parse the structured log content into a dictionary of fields."""
