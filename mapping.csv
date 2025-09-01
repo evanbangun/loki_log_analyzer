@@ -1,0 +1,654 @@
+Pusat/Daerah,Provinsi,Tipe Instansi,Nama Instansi,Akun SPLP,Akun Nasional,Domain
+Instansi Pusat,Kementerian,Kementerian,Kementerian Luar Negeri,ada,pustikkp_kemlu,kemlu.go.id
+Instansi Pusat,Kementerian,Kementerian,Kementerian Dalam Negeri,ada,kemendagri_splp,kemendagri.go.id
+Instansi Pusat,Kementerian,Kementerian,Kementerian Pertahanan,ada,kemenhan_splp,kemenhan.go.id
+Instansi Pusat,Kementerian,Kementerian,Kementerian Agama,ada,kemenag_splp,kemenag.go.id
+Instansi Pusat,Kementerian,Kementerian,Kementerian Hukum dan HAM,ada,kemenkumham_splp,kemenkumham.go.id
+Instansi Pusat,Kementerian,Kementerian,Kementerian Keuangan,ada,kemenkeu_splp,kemenkeu.go.id
+Instansi Pusat,Kementerian,Kementerian,Kementerian Pendidikan Kebudayaan Riset dan Teknologi,ada,pusdatin_kemdikbud,kemdikbud.go.id
+Instansi Pusat,Kementerian,Kementerian,Kementerian Kesehatan,ada,kemkes_splp,kemkes.go.id
+Instansi Pusat,Kementerian,Kementerian,Kementerian Sosial,ada,kemensos_splp,kemensos.go.id
+Instansi Pusat,Kementerian,Kementerian,Kementerian Ketenagakerjaan,ada,pusdatin_kemnaker,kemnaker.go.id
+Instansi Pusat,Kementerian,Kementerian,Kementerian Perindustrian,ada,kemenperin_splp,kemenperin.go.id
+Instansi Pusat,Kementerian,Kementerian,Kementerian Perdagangan,ada,pdsi_kemendag,kemendag.go.id
+Instansi Pusat,Kementerian,Kementerian,Kementerian Energi dan Sumber Daya Mineral,ada,pusdatin_esdm,esdm.go.id
+Instansi Pusat,Kementerian,Kementerian,Kementerian Pekerjaan Umum dan Perumahan Rakyat,ada,pusdatin_kemenpupr,pu.go.id
+Instansi Pusat,Kementerian,Kementerian,Kementerian Perhubungan,ada,dephub_splp,dephub.go.id
+Instansi Pusat,Kementerian,Kementerian,Kementerian Komunikasi dan Informatika,ada,kominfo_splp,kominfo.go.id
+Instansi Pusat,Kementerian,Kementerian,Kementerian Pertanian,ada,pertanian_splp,pertanian.go.id
+Instansi Pusat,Kementerian,Kementerian,Kementerian Lingkungan Hidup dan Kehutanan,ada,pusdatin_menlhk,menlhk.go.id
+Instansi Pusat,Kementerian,Kementerian,Kementerian Kelautan dan Perikanan,ada,kkp_splp,kkp.go.id
+Instansi Pusat,Kementerian,Kementerian,Kementerian Desa dan PDTT,ada,kemendesa_splp,kemendesa.go.id
+Instansi Pusat,Kementerian,Kementerian,Kementerian Agraria dan Tata Ruang/Badan Pertanahan Nasional,ada,pusdatin_atrbpn,atrbpn.go.id
+Instansi Pusat,Kementerian,Kementerian,Kementerian Perencanaan Pembangunan Nasional/BAPPENAS,ada,pusdatin_bappenas,bappenas.go.id
+Instansi Pusat,Kementerian,Kementerian,Kementerian Pendayagunaan Aparatur Negara dan Reformasi Birokrasi,ada,menpan_splp,menpan.go.id
+Instansi Pusat,Kementerian,Kementerian,Kementerian Badan Usaha Milik Negara,ada,bumn_splp,bumn.go.id
+Instansi Pusat,Kementerian,Kementerian,Kementerian Koperasi dan UMKM,ada,kemenkopukm_splp,kemenkopukm.go.id
+Instansi Pusat,Kementerian,Kementerian,Kementerian Pariwisata dan Ekonomi Kreatif,ada,kemenparekraf_splp,kemenparekraf.go.id
+Instansi Pusat,Kementerian,Kementerian,Kementerian Pemberdayaan Perempuan dan Perlindungan Anak,ada,kemenpppa_splp,kemenpppa.go.id
+Instansi Pusat,Kementerian,Kementerian,Kementerian Pemuda dan Olahraga,ada,kemenpora_splp,kemenpora.go.id
+Instansi Pusat,Kementerian,Kementerian,Kementerian Investasi / Badan Koordinasi Penanaman Modal,ada,bkpm_splp,bkpm.go.id
+Instansi Pusat,Kementerian,Kementerian,Kementerian Sekretariat Negara,ada,setneg_splp,setneg.go.id
+Instansi Pusat,Kementerian,Kementerian,Kementerian Koordinator Bidang Perekonomian,,ekon_splp,ekon.go.id
+Instansi Pusat,Kementerian,Kementerian,Kementerian Koordinator Bidang Polhukam,ada,polkam_splp,polkam.go.id
+Instansi Pusat,Kementerian,Kementerian,Kementerian Koordinator Bidang Maritim dan Investasi,ada,birkom_marves,maritim.go.id
+Instansi Pusat,Kementerian,Kementerian,Kementerian Koordinator Bidang PMK,ada,kemenkopmk_splp,kemenkopmk.go.id
+Instansi Pusat,Kementerian,Kementerian,Kementerian Koordinator Bidang Pangan,,biromkdi_kemenkopangan,kemenkopangan.go.id
+Instansi Pusat,Kementerian,Kementerian,Kementerian Lingkungan Hidup,,pusdatin_kemenlh,kemenlh.go.id
+Instansi Pusat,LPNK,LPNK,Badan Riset dan Inovasi Nasional,ada,brin_splp,brin.go.id
+Instansi Pusat,LPNK,LPNK,Badan Siber dan Sandi Negara,ada,pusdatin_bssn,bssn.go.id
+Instansi Pusat,LPNK,LPNK,Badan Kepegawaian Negara,ada,sinka_bkn,bkn.go.id
+Instansi Pusat,LPNK,LPNK,Lembaga Administrasi Negara,ada,lan_splp,lan.go.id
+Instansi Pusat,LPNK,LPNK,Badan Pusat Statistik,ada,bps_splp,bps.go.id
+Instansi Pusat,LPNK,LPNK,Arsip Nasional Republik Indonesia,ada,anri_splp,anri.go.id
+Instansi Pusat,LPNK,LPNK,Badan Informasi Geospasial,ada,big_splp,big.go.id
+Instansi Pusat,LPNK,LPNK,Badan Kependudukan dan KB Nasional,ada,ditlaptik_bkkbn,bkkbn.go.id
+Instansi Pusat,LPNK,LPNK,Badan Pengawasan Keuangan dan Pembangunan,ada,pusinfowas_bpkp,bpkp.go.id
+Instansi Pusat,LPNK,LPNK,Perpustakaan Nasional,ada,perpusnas_splp,perpusnas.go.id
+Instansi Pusat,LPNK,LPNK,Badan Standarisasi Nasional,ada,pusdatin_bsn,bsn.go.id
+Instansi Pusat,LPNK,LPNK,Badan Pengawas Tenaga Nuklir,,bapeten_splp,bapeten.go.id
+Instansi Pusat,LPNK,LPNK,Badan Pengawas Obat dan Makanan,ada,pusdatin_pom,pom.go.id
+Instansi Pusat,LPNK,LPNK,Lembaga Ketahanan Nasional RI,,lemhannas_splp,lemhannas.go.id
+Instansi Pusat,LPNK,LPNK,"Badan Meteorologi, Klimatologi, dan Geofisika",ada,pusdatin_bmkg,bmkg.go.id
+Instansi Pusat,LPNK,LPNK,Badan Narkotika Nasional,ada,bnn_splp,bnn.go.id
+Instansi Pusat,LPNK,LPNK,Badan Nasional Penanggulangan Bencana,ada,bnpb_splp,bnpb.go.id
+Instansi Pusat,LPNK,LPNK,Badan Keamanan Laut RI (Bakamla),ada,datin_bakamla,bakamla.go.id
+Instansi Pusat,LPNK,LPNK,Badan SAR Nasional,,basarnas_splp,basarnas.go.id
+Instansi Pusat,LPNK,LPNK,Lembaga Kebijakan Pengadaan Barang/Jasa Pemerintah,ada,pusdatin_lkpp,lkpp.go.id
+Instansi Pusat,LPNK,LPNK,Badan Nasional Penanggulangan Terorisme,,bnpt_splp,bnpt.go.id
+Instansi Pusat,LPNK,LPNK,Badan Nasional Penempatan Perlindungan TKI / Badan Perlindungan Pekerja Migran Indonesia (BP2MI),ada,bp2mi_splp,bp2mi.go.id
+Instansi Pusat,LPNK,LPNK,Badan Pangan Nasional,ada,badanpangan_splp,badanpangan.go.id
+Instansi Pusat,LPNK,LPNK,Badan Gizi Nasional,,pdsi_bgn,bgn.go.id
+Instansi Pusat,Alat Negara,Alat Negara,Kepolisian Negara RI,ada,divtik_polri,polri.go.id
+Instansi Pusat,Setjen Lembaga Negara,Setjen Lembaga Negara,Sekretariat Jenderal MPR,ada,mpr_splp,mpr.go.id
+Instansi Pusat,Setjen Lembaga Negara,Setjen Lembaga Negara,Sekretariat Jenderal DPR RI,ada,pustekinfo_dpr,dpr.go.id
+Instansi Pusat,Setjen Lembaga Negara,Setjen Lembaga Negara,Setjen Dewan Perwakilan Daerah,ada,dpd_splp,dpd.go.id
+Instansi Pusat,Setjen Lembaga Negara,Setjen Lembaga Negara,Mahkamah Agung RI,,mahkamahagung_splp,mahkamahagung.go.id
+Instansi Pusat,Lembaga Negara,Lembaga Negara,Kepaniteraan dan Sekretariat Jenderal Mahkamah Konstitusi RI,ada,pustikom_mkri,mkri.id
+Instansi Pusat,Lembaga Negara,Lembaga Negara,Setjen Komisi Yudisial,ada,komisiyudisial_splp,komisiyudisial.go.id
+Instansi Pusat,Alat Negara,Alat Negara,Kejaksaan Agung,ada,pusdaskrimti_kejaksaan,kejaksaan.go.id
+Instansi Pusat,Setjen Lembaga Negara,Setjen Lembaga Negara,Badan Pemeriksa Keuangan,ada,bpk_splp,bpk.go.id
+Instansi Pusat,Alat Negara,Alat Negara,Badan Intelijen Negara,ada,bin_splp,bin.go.id
+Instansi Pusat,Sekretariat Kabinet,Sekretariat Kabinet,Sekretariat Kabinet,ada,setkab_splp,setkab.go.id
+Instansi Pusat,Lembaga Negara,Lembaga Negara,Badan Pembinaan Ideologi Pancasila,ada,pusdatin_bpip,bpip.go.id
+Instansi Pusat,Lembaga Non Struktural,Lembaga Non Struktural,Setjen WANTANNAS,,wantannas_splp,wantannas.go.id
+Instansi Pusat,Lembaga Non Struktural,Lembaga Non Struktural,Setjen Komisi Pemilihan Umum,,pusdatinkpu,kpu.go.id
+Instansi Pusat,Lembaga Non Struktural,Lembaga Non Struktural,Setjen Komnas HAM,ada,biroumum_komnasham,komnasham.go.id
+Instansi Pusat,Lembaga Non Struktural,Lembaga Non Struktural,Setjen Komisi Pemberantasan Korupsi,ada,kpk_splp,kpk.go.id
+Instansi Pusat,Lembaga Non Struktural,Lembaga Non Struktural,Pusat Pelaporan dan Analisis Transaksi Keuangan,ada,ppatk_splp,ppatk.go.id
+Instansi Pusat,Lembaga Non Struktural,Lembaga Non Struktural,Ombudsman Republik Indonesia,ada,ombudsman_splp,ombudsman.go.id
+Instansi Pusat,Lembaga Non Struktural,Lembaga Non Struktural,Badan Nasional Pengelola Perbatasan,ada,bnpp_splp,bnpp.go.id
+Instansi Pusat,Lembaga Non Struktural,Lembaga Non Struktural,Setjen Komisi Pengawas Persaiangan Usaha,,kppu_splp,kppu.go.id
+Instansi Pusat,Lembaga Non Struktural,Lembaga Non Struktural,Badan Pengawas Pemilihan Umum,ada,pusdatin_bawaslu,bawaslu.go.id
+Instansi Pusat,Lembaga Non Struktural,Lembaga Non Struktural,Komisi Penyiaran Indonesia,,,
+Instansi Pusat,Lembaga Non Struktural,Lembaga Non Struktural,Komisi Informasi Pusat,,,
+Instansi Pusat,Lembaga Non Struktural,Lembaga Non Struktural,Komisi Kejaksaan,,,
+Instansi Pusat,Lembaga Non Struktural,Lembaga Non Struktural,Dewan Pers,,,
+Instansi Pusat,Lembaga Non Struktural,Lembaga Non Struktural,Dewan Jaminan Sosial Nasional,,,
+Instansi Pusat,Lembaga Non Struktural,Lembaga Non Struktural,Dewan Kehormatan Penyelenggara Pemilu,ada,dkpp_ri,dkpp.go.id
+Instansi Pusat,Lembaga Non Struktural,Lembaga Non Struktural,Badan Nasional Sertifikasi Profesi,,,
+Instansi Pusat,Lembaga Non Struktural,Lembaga Non Struktural,Badan Pengatur Hilir Minyak dan Gas Bumi,,,
+Instansi Pusat,Lembaga Non Struktural,Lembaga Non Struktural,Lembaga Perlindungan Saksi dan Korban,,,
+Instansi Pusat,Lembaga Non Struktural,Lembaga Non Struktural,Lembaga Sensor Film,,,
+Instansi Pusat,Lembaga Non Struktural,Lembaga Non Struktural,Konsil Kedokteran Indonesia,,,
+Instansi Pusat,Lembaga Non Struktural,Lembaga Non Struktural,Kantor Staf Presiden,ada,sekretariat_ksp,ksp.go.id
+Instansi Pusat,Lembaga Penyiaran Publik,Lembaga Penyiaran Publik,Televisi Republik Indonesia,,,
+Instansi Pusat,Lembaga Penyiaran Publik,Lembaga Penyiaran Publik,Radio Republik Indonesia,ada,lpp_rri,rri.go.id
+Instansi Pusat,Lembaga Non Struktural,Lembaga Non Struktural,Badan Pengusaha Batam,ada,bpbatam_splp,bpbatam.go.id
+Instansi Pusat,Lembaga Non Struktural,Lembaga Non Struktural,Badan Pengusaha Bintan,,,
+Instansi Pusat,Lembaga Non Struktural,Lembaga Non Struktural,Badan Pengusaha Karimun,,,
+Instansi Pusat,Lembaga Non Struktural,Lembaga Non Struktural,Badan Pengusaha Sabang,,,
+Instansi Pusat,Lembaga Non Struktural,Lembaga Non Struktural,Komite Nasional Ekonomi Nasional,ada,kneks_splp,kneks.go.id
+Instansi Pusat,Lembaga Non Struktural,Lembaga Non Struktural,Badan Penyelenggara Jaminan Produk Halal,ada,bpjph_kemenag,halal.go.id
+Pemerintah Daerah,Aceh,Provinsi,Provinsi Aceh,ada,diskominfop_acehprov,acehprov.go.id
+Pemerintah Daerah,Aceh,Kabupaten,Kabupaten Aceh Barat,ada,diskominfop_acehbaratkab,acehbaratkab.go.id
+Pemerintah Daerah,Aceh,Kabupaten,Kabupaten Aceh Barat Daya,ada,diskominsa_acehbaratdayakab,acehbaratdayakab.go.id
+Pemerintah Daerah,Aceh,Kabupaten,Kabupaten Aceh Besar,,,
+Pemerintah Daerah,Aceh,Kabupaten,Kabupaten Aceh Jaya,ada,diskominfop_acehjayakab,acehjayakab.go.id
+Pemerintah Daerah,Aceh,Kabupaten,Kabupaten Aceh Selatan,ada,diskominfo_acehselatankab,acehselatankab.go.id
+Pemerintah Daerah,Aceh,Kabupaten,Kabupaten Aceh Singkil,,,
+Pemerintah Daerah,Aceh,Kabupaten,Kabupaten Aceh Tamiang,ada,diskominfo_acehtamiangkab,acehtamiangkab.go.id
+Pemerintah Daerah,Aceh,Kabupaten,Kabupaten Aceh Tengah,,,
+Pemerintah Daerah,Aceh,Kabupaten,Kabupaten Aceh Tenggara,,,
+Pemerintah Daerah,Aceh,Kabupaten,Kabupaten Aceh Timur,ada,diskominfo_acehtimurkab,acehtimurkab.go.id
+Pemerintah Daerah,Aceh,Kabupaten,Kabupaten Aceh Utara,,,
+Pemerintah Daerah,Aceh,Kabupaten,Kabupaten Bener Meriah,ada,diskominfo_benermeriahkab,benermeriahkab.go.id
+Pemerintah Daerah,Aceh,Kabupaten,Kabupaten Bireuen,ada,diskominfop_bireuenkab,bireuenkab.go.id
+Pemerintah Daerah,Aceh,Kabupaten,Kabupaten Gayo Lues,,,
+Pemerintah Daerah,Aceh,Kabupaten,Kabupaten Nagan Raya,ada,diskominfotik_naganrayakab,naganrayakab.go.id
+Pemerintah Daerah,Aceh,Kabupaten,Kabupaten Pidie,ada,diskominsa_pidiekab,pidiekab.go.id
+Pemerintah Daerah,Aceh,Kabupaten,Kabupaten Pidie Jaya,ada,diskominfo_pidiejayakab,pidiejayakab.go.id
+Pemerintah Daerah,Aceh,Kabupaten,Kabupaten Simeulue,,,
+Pemerintah Daerah,Aceh,Kota,Kota Banda Aceh,ada,diskominfos_bandaacehkota,bandaacehkota.go.id
+Pemerintah Daerah,Aceh,Kota,Kota Langsa,ada,diskominfo_langsakota,langsakota.go.id
+Pemerintah Daerah,Aceh,Kota,Kota Lhokseumawe,,,
+Pemerintah Daerah,Aceh,Kota,Kota Sabang,ada,diskominfo_sabangkota,sabangkota.go.id
+Pemerintah Daerah,Aceh,Kota,Kota Subulussalam,ada,diskominfo_subulussalamkota,subulussalamkota.go.id
+Pemerintah Daerah,Sumatera Utara,Provinsi,Provinsi Sumatera Utara,ada,diskominfo_sumutprov,sumutprov.go.id
+Pemerintah Daerah,Sumatera Utara,Kabupaten,Kabupaten Asahan,ada,diskominfo_asahankab,asahankab.go.id
+Pemerintah Daerah,Sumatera Utara,Kabupaten,Kabupaten Batubara,ada,diskominfo_batubarakab,batubarakab.go.id
+Pemerintah Daerah,Sumatera Utara,Kabupaten,Kabupaten Dairi,,,
+Pemerintah Daerah,Sumatera Utara,Kabupaten,Kabupaten Deli Serdang,ada,diskominfosp_deliserdangkab,deliserdangkab.go.id
+Pemerintah Daerah,Sumatera Utara,Kabupaten,Kabupaten Humbang Hasundutan,ada,diskominfo_humbanghasundutan,humbanghasundutankab.go.id
+Pemerintah Daerah,Sumatera Utara,Kabupaten,Kabupaten Karo,ada,diskominfo_karokab,karokab.go.id
+Pemerintah Daerah,Sumatera Utara,Kabupaten,Kabupaten Labuhanbatu,ada,diskominfo_labuhanbatukab,labuhanbatukab.go.id
+Pemerintah Daerah,Sumatera Utara,Kabupaten,Kabupaten Labuhanbatu Selatan,,,
+Pemerintah Daerah,Sumatera Utara,Kabupaten,Kabupaten Labuhanbatu Utara,ada,diskominfo_laburakab,labura.go.id
+Pemerintah Daerah,Sumatera Utara,Kabupaten,Kabupaten Langkat,ada,diskominfo_langkatkab,langkatkab.go.id
+Pemerintah Daerah,Sumatera Utara,Kabupaten,Kabupaten Mandailing Natal,ada,diskominfo_madina,madina.go.id
+Pemerintah Daerah,Sumatera Utara,Kabupaten,Kabupaten Nias,ada,diskominfo_niaskab,niaskab.go.id
+Pemerintah Daerah,Sumatera Utara,Kabupaten,Kabupaten Nias Barat,,,
+Pemerintah Daerah,Sumatera Utara,Kabupaten,Kabupaten Nias Selatan,ada,diskominfo_niasselatankab,niasselatankab.go.id
+Pemerintah Daerah,Sumatera Utara,Kabupaten,Kabupaten Nias Utara,,,
+Pemerintah Daerah,Sumatera Utara,Kabupaten,Kabupaten Padang Lawas,ada,diskominfo_padanglawaskab,padanglawaskab.go.id
+Pemerintah Daerah,Sumatera Utara,Kabupaten,Kabupaten Padang Lawas Utara,,,
+Pemerintah Daerah,Sumatera Utara,Kabupaten,Kabupaten Pakpak Bharat,ada,diskominfo_pakpakbharatkab,pakpakbharatkab.go.id
+Pemerintah Daerah,Sumatera Utara,Kabupaten,Kabupaten Samosir,ada,diskominfo_samosirkab,samosirkab.go.id
+Pemerintah Daerah,Sumatera Utara,Kabupaten,Kabupaten Serdang Bedagai,ada,diskominfo_serdangbedagaikab,serdangbedagaikab.go.id
+Pemerintah Daerah,Sumatera Utara,Kabupaten,Kabupaten Simalungun,ada,diskominfo_simalungunkab,simalungunkab.go.id
+Pemerintah Daerah,Sumatera Utara,Kabupaten,Kabupaten Tapanuli Selatan,ada,diskominfo_tapselkab,tapselkab.go.id
+Pemerintah Daerah,Sumatera Utara,Kabupaten,Kabupaten Tapanuli Tengah,ada,diskominfo_tapteng,tapteng.go.id
+Pemerintah Daerah,Sumatera Utara,Kabupaten,Kabupaten Tapanuli Utara,ada,diskominfo_taputkab,taputkab.go.id
+Pemerintah Daerah,Sumatera Utara,Kabupaten,Kabupaten Toba Samosir,ada,diskominfo_tobakab,tobakab.go.id
+Pemerintah Daerah,Sumatera Utara,Kota,Kota Binjai,ada,diskominfo_binjaikota,binjaikota.go.id
+Pemerintah Daerah,Sumatera Utara,Kota,Kota Gunungsitoli,ada,diskominfo_gunungsitolikota,gunungsitolikota.go.id
+Pemerintah Daerah,Sumatera Utara,Kota,Kota Medan,ada,,
+Pemerintah Daerah,Sumatera Utara,Kota,Kota Padangsidimpuan,ada,diskominfo_padangsidimpuankota,padangsidimpuankota.go.id
+Pemerintah Daerah,Sumatera Utara,Kota,Kota Pematang Siantar,ada,diskominfo_pematangsiantar,pematangsiantar.go.id
+Pemerintah Daerah,Sumatera Utara,Kota,Kota Sibolga,ada,diskominfo_sibolgakota,sibolgakota.go.id
+Pemerintah Daerah,Sumatera Utara,Kota,Kota Tanjungbalai,ada,diskominfo_tanjungbalaikota,tanjungbalaikota.go.id
+Pemerintah Daerah,Sumatera Utara,Kota,Kota Tebing Tinggi,ada,diskominfo_tebingtinggikota,tebingtinggikota.go.id
+Pemerintah Daerah,Sumatera Barat,Provinsi,Provinsi Sumatera Barat,ada,diskominfotik_sumbarprov,sumbarprov.go.id
+Pemerintah Daerah,Sumatera Barat,Kabupaten,Kabupaten Agam,ada,diskominfo_agamkab,agamkab.go.id
+Pemerintah Daerah,Sumatera Barat,Kabupaten,Kabupaten Dharmasraya,ada,diskominfo_dharmasrayakab,dharmasrayakab.go.id
+Pemerintah Daerah,Sumatera Barat,Kabupaten,Kabupaten Kepulauan Mentawai,ada,diskominfo_mentawaikab,mentawaikab.go.id
+Pemerintah Daerah,Sumatera Barat,Kabupaten,Kabupaten Lima Puluh Kota,ada,diskominfo_limapuluhkotakab,limapuluhkotakab.go.id
+Pemerintah Daerah,Sumatera Barat,Kabupaten,Kabupaten Padang Pariaman,ada,sekda_padangpariamankab,padangpariamankab.go.id
+Pemerintah Daerah,Sumatera Barat,Kabupaten,Kabupaten Pasaman,ada,diskominfo_pasamankab,pasamankab.go.id
+Pemerintah Daerah,Sumatera Barat,Kabupaten,Kabupaten Pasaman Barat,ada,diskominfo_pasamanbarat,pasamanbaratkab.go.id
+Pemerintah Daerah,Sumatera Barat,Kabupaten,Kabupaten Pesisir Selatan,ada,diskominfo_peisisirselatan,pesisirselatankab.go.id
+Pemerintah Daerah,Sumatera Barat,Kabupaten,Kabupaten Sijunjung,ada,diskominfo_sijunjung,sijunjung.go.id
+Pemerintah Daerah,Sumatera Barat,Kabupaten,Kabupaten Solok,ada,diskominfo_solokkab,solokkab.go.id
+Pemerintah Daerah,Sumatera Barat,Kabupaten,Kabupaten Solok Selatan,ada,diskominfo_solselkab,solselkab.go.id
+Pemerintah Daerah,Sumatera Barat,Kabupaten,Kabupaten Tanah Datar,ada,diskominfo_tanahdatar,tanahdatar.go.id
+Pemerintah Daerah,Sumatera Barat,Kota,Kota Bukittinggi,ada,diskominfo_bukittinggi,bukittinggikota.go.id
+Pemerintah Daerah,Sumatera Barat,Kota,Kota Padang,ada,diskominfo_padangkota,padang.go.id
+Pemerintah Daerah,Sumatera Barat,Kota,Kota Padangpanjang,ada,diskominfo_padangpanjang,padangpanjang.go.id
+Pemerintah Daerah,Sumatera Barat,Kota,Kota Pariaman,ada,diskominfo_pariamankota,pariamankota.go.id
+Pemerintah Daerah,Sumatera Barat,Kota,Kota Payakumbuh,ada,diskominfo_payakumbuhkota,payakumbuhkota.go.id
+Pemerintah Daerah,Sumatera Barat,Kota,Kota Sawahlunto,ada,diskominfo_sawahluntokota,sawahluntokota.go.id
+Pemerintah Daerah,Sumatera Barat,Kota,Kota Solok,ada,diskominfo_solokkota,solokkota.go.id
+Pemerintah Daerah,Riau,Provinsi,Provinsi Riau,ada,diskominfos_riauprov,riau.go.id
+Pemerintah Daerah,Riau,Kabupaten,Kabupaten Bengkalis,ada,diskominfos_bengkaliskab,bengkaliskab.go.id
+Pemerintah Daerah,Riau,Kabupaten,Kabupaten Indragiri Hilir,ada,diskominfops_inhilkab,inhilkab.go.id
+Pemerintah Daerah,Riau,Kabupaten,Kabupaten Indragiri Hulu,ada,diskominfo_inhukab,inhukab.go.id
+Pemerintah Daerah,Riau,Kabupaten,Kabupaten Kampar,ada,diskominfop_kamparkab,kamparkab.go.id
+Pemerintah Daerah,Riau,Kabupaten,Kabupaten Kuantan Singingi,,,
+Pemerintah Daerah,Riau,Kabupaten,Kabupaten Pelalawan,ada,diskominfo_pelalawankab,pelalawankab.go.id
+Pemerintah Daerah,Riau,Kabupaten,Kabupaten Rokan Hilir,ada,diskominfosp_rohilkab,rohilkab.go.id
+Pemerintah Daerah,Riau,Kabupaten,Kabupaten Rokan Hulu,,,
+Pemerintah Daerah,Riau,Kabupaten,Kabupaten Siak,ada,diskominfo_siakkab,siakkab.go.id
+Pemerintah Daerah,Riau,Kabupaten,Kabupaten Kepulauan Meranti,ada,diskominfosp_merantikab,merantikab.go.id
+Pemerintah Daerah,Riau,Kota,Kota Dumai,ada,diskominfo_dumaikota,dumaikota.go.id
+Pemerintah Daerah,Riau,Kota,Kota Pekanbaru,ada,diskominfosp_pekanbarukota,pekanbaru.go.id
+Pemerintah Daerah,Kepulauan Riau,Provinsi,Provinsi Kepulauan Riau,ada,diskominfo_kepriprov,kepriprov.go.id
+Pemerintah Daerah,Kepulauan Riau,Kabupaten,Kabupaten Bintan,ada,diskominfo_bintankab,bintankab.go.id
+Pemerintah Daerah,Kepulauan Riau,Kabupaten,Kabupaten Karimun,,,
+Pemerintah Daerah,Kepulauan Riau,Kabupaten,Kabupaten Kepulauan Anambas,ada,diskominfos_anambaskab,anambaskab.go.id
+Pemerintah Daerah,Kepulauan Riau,Kabupaten,Kabupaten Lingga,ada,diskominfo_linggakab,linggakab.go.id
+Pemerintah Daerah,Kepulauan Riau,Kabupaten,Kabupaten Natuna,ada,diskominfo_natunakab,natunakab.go.id
+Pemerintah Daerah,Kepulauan Riau,Kota,Kota Batam,ada,diskominfo_batam,batam.go.id
+Pemerintah Daerah,Kepulauan Riau,Kota,Kota Tanjung Pinang,ada,diskominfo_tanjungpinangkota,tanjungpinangkota.go.id
+Pemerintah Daerah,Jambi,Provinsi,Provinsi Jambi,ada,diskominfo_jambiprov,jambiprov.go.id
+Pemerintah Daerah,Jambi,Kabupaten,Kabupaten Batanghari,ada,diskominfo_batanghari,batangharikab.go.id
+Pemerintah Daerah,Jambi,Kabupaten,Kabupaten Bungo,,,
+Pemerintah Daerah,Jambi,Kabupaten,Kabupaten Kerinci,ada,diskominfo_kerincikab,kerincikab.go.id
+Pemerintah Daerah,Jambi,Kabupaten,Kabupaten Merangin,ada,diskominfo_meranginkab,meranginkab.go.id
+Pemerintah Daerah,Jambi,Kabupaten,Kabupaten Muaro Jambi,,,
+Pemerintah Daerah,Jambi,Kabupaten,Kabupaten Sarolangun,ada,diskominfo_sarolangunkab,sarolangunkab.go.id
+Pemerintah Daerah,Jambi,Kabupaten,Kabupaten Tanjung Jabung Barat,,,
+Pemerintah Daerah,Jambi,Kabupaten,Kabupaten Tanjung Jabung Timur,ada,diskominfo_tanjabtimkab,tanjabtimkab.go.id
+Pemerintah Daerah,Jambi,Kabupaten,Kabupaten Tebo,ada,diskominfo_tebokab,tebokab.go.id
+Pemerintah Daerah,Jambi,Kota,Kota Jambi,ada,diskominfo_jambikota,jambikota.go.id
+Pemerintah Daerah,Jambi,Kota,Kota Sungai Penuh,,,
+Pemerintah Daerah,Bangka Belitung,Provinsi,Provinsi Bangka Belitung,ada,diskominfo_babelprov,babelprov.go.id
+Pemerintah Daerah,Bangka Belitung,Kabupaten,Kabupaten Bangka,,,
+Pemerintah Daerah,Bangka Belitung,Kabupaten,Kabupaten Belitung,ada,diskominfo_belitung,belitung.go.id
+Pemerintah Daerah,Bangka Belitung,Kabupaten,Kabupaten Bangka Barat,ada,diskominfo_bangkabaratkab,bangkabaratkab.go.id
+Pemerintah Daerah,Bangka Belitung,Kabupaten,Kabupaten Bangka Tengah,ada,diskominfos_bangkatengahkab,bangkatengahkab.go.id
+Pemerintah Daerah,Bangka Belitung,Kabupaten,Kabupaten Bangka Selatan,ada,diskominfo_bangkaselatankab,bangkaselatankab.go.id
+Pemerintah Daerah,Bangka Belitung,Kabupaten,Kabupaten Belitung Timur,ada,diskominfo_beltimkab,beltim.go.id
+Pemerintah Daerah,Bangka Belitung,Kota,Kota Pangkal Pinang,ada,diskominfo_pangkalpinangkota,pangkalpinangkota.go.id
+Pemerintah Daerah,Bengkulu,Provinsi,Provinsi Bengkulu,ada,diskominfos_bengkuluprov,bengkuluprov.go.id
+Pemerintah Daerah,Bengkulu,Kabupaten,Kabupaten Bengkulu Selatan,ada,diskominfo_bengkuluselatankab,bengkuluselatankab.go.id
+Pemerintah Daerah,Bengkulu,Kabupaten,Kabupaten Bengkulu Tengah,ada,diskominfos_bengkulutengahkab,bengkulutengahkab.go.id
+Pemerintah Daerah,Bengkulu,Kabupaten,Kabupaten Bengkulu Utara,ada,diskominfo_bengkuluutarakab,bengkuluutarakab.go.id
+Pemerintah Daerah,Bengkulu,Kabupaten,Kabupaten Kaur,ada,diskominfosp_kaurkab,kaurkab.go.id
+Pemerintah Daerah,Bengkulu,Kabupaten,Kabupaten Kepahiang,ada,diskominfops_kepahiangkab,kepahiangkab.go.id
+Pemerintah Daerah,Bengkulu,Kabupaten,Kabupaten Lebong,ada,diskominfosp_lebongkab,lebongkab.go.id
+Pemerintah Daerah,Bengkulu,Kabupaten,Kabupaten Mukomuko,ada,diskominfo_mukomukokab,mukomukokab.go.id
+Pemerintah Daerah,Bengkulu,Kabupaten,Kabupaten Rejang Lebong,ada,diskominfo_rejanglebongkab,rejanglebongkab.go.id
+Pemerintah Daerah,Bengkulu,Kabupaten,Kabupaten Seluma,ada,diskominfops_selumakab,selumakab.go.id
+Pemerintah Daerah,Bengkulu,Kota,Kota Bengkulu,ada,diskominfop_bengkulukota,bengkulukota.go.id
+Pemerintah Daerah,Sumatera Selatan,Provinsi,Provinsi Sumatera Selatan,ada,diskominfo_sumselprov,sumselprov.go.id
+Pemerintah Daerah,Sumatera Selatan,Kabupaten,Kabupaten Banyuasin,ada,diskominfo_banyuasinkab,banyuasinkab.go.id
+Pemerintah Daerah,Sumatera Selatan,Kabupaten,Kabupaten Empat Lawang,,,
+Pemerintah Daerah,Sumatera Selatan,Kabupaten,Kabupaten Lahat,ada,diskominfo_lahatkab,lahatkab.go.id
+Pemerintah Daerah,Sumatera Selatan,Kabupaten,Kabupaten Muara Enim,,,
+Pemerintah Daerah,Sumatera Selatan,Kabupaten,Kabupaten Musi Banyuasin,ada,diskominfo_mubakab,mubakab.go.id
+Pemerintah Daerah,Sumatera Selatan,Kabupaten,Kabupaten Musi Rawas,ada,diskominfos_musirawaskab,musirawaskab.go.id
+Pemerintah Daerah,Sumatera Selatan,Kabupaten,Kabupaten Ogan Ilir,ada,diskominfo_oganilirkab,oganilirkab.go.id
+Pemerintah Daerah,Sumatera Selatan,Kabupaten,Kabupaten Ogan Komering Ilir,ada,diskominfo_okikab,kaboki.go.id
+Pemerintah Daerah,Sumatera Selatan,Kabupaten,Kabupaten Ogan Komering Ulu,ada,diskominfo_okukab,okukab.go.id
+Pemerintah Daerah,Sumatera Selatan,Kabupaten,Kabupaten Ogan Komering Ulu Selatan,ada,diskominfo_okuselatankab,okuselatankab.go.id
+Pemerintah Daerah,Sumatera Selatan,Kabupaten,Kabupaten Ogan Komering Ulu Timur,ada,diskominfo_okutimurkab,okutimurkab.go.id
+Pemerintah Daerah,Sumatera Selatan,Kabupaten,Kabupaten Penukal Abab Lematang Ilir,ada,diskominfo_palikab,palikab.go.id
+Pemerintah Daerah,Sumatera Selatan,Kabupaten,Kabupaten Musi Rawas Utara,ada,diskominfo_muratarakab,muratarakab.go.id
+Pemerintah Daerah,Sumatera Selatan,Kota,Kota Lubuklinggau,,,
+Pemerintah Daerah,Sumatera Selatan,Kota,Kota Pagar Alam,,,
+Pemerintah Daerah,Sumatera Selatan,Kota,Kota Palembang,ada,diskominfo_palembangkota,palembang.go.id
+Pemerintah Daerah,Sumatera Selatan,Kota,Kota Prabumulih,,,
+Pemerintah Daerah,Lampung,Provinsi,Provinsi Lampung,ada,diskominfo_lampungprov,lampungprov.go.id
+Pemerintah Daerah,Lampung,Kabupaten,Kabupaten Lampung Barat,ada,diskominfo_lampungbaratkab,lampungbaratkab.go.id
+Pemerintah Daerah,Lampung,Kabupaten,Kabupaten Lampung Selatan,ada,diskominfo_lampungselatankab,lampungselatankab.go.id
+Pemerintah Daerah,Lampung,Kabupaten,Kabupaten Lampung Tengah,ada,diskominfo_lampungtengah,lampungtengahkab.go.id
+Pemerintah Daerah,Lampung,Kabupaten,Kabupaten Lampung Timur,ada,diskominfo_lampungtimurkab,lampungtimurkab.go.id
+Pemerintah Daerah,Lampung,Kabupaten,Kabupaten Lampung Utara,ada,diskominfo_lampungutarakab,lampungutarakab.go.id
+Pemerintah Daerah,Lampung,Kabupaten,Kabupaten Mesuji,ada,diskominfo_mesujikab,mesujikab.go.id
+Pemerintah Daerah,Lampung,Kabupaten,Kabupaten Pesawaran,ada,diskominfo_pesawarankab,pesawarankab.go.id
+Pemerintah Daerah,Lampung,Kabupaten,Kabupaten Pringsewu,ada,diskominfo_pringsewukab,pringsewukab.go.id
+Pemerintah Daerah,Lampung,Kabupaten,Kabupaten Tanggamus,,,
+Pemerintah Daerah,Lampung,Kabupaten,Kabupaten Tulang Bawang,ada,diskominfo_tulangbawangkab,tulangbawangkab.go.id
+Pemerintah Daerah,Lampung,Kabupaten,Kabupaten Tulang Bawang Barat,ada,diskominfo_tubabakab,tubaba.go.id
+Pemerintah Daerah,Lampung,Kabupaten,Kabupaten Way Kanan,,,
+Pemerintah Daerah,Lampung,Kabupaten,Kabupaten Pesisir Barat,ada,diskominfo_pesisirbaratkab,pesisirbaratkab.go.id
+Pemerintah Daerah,Lampung,Kota,Kota Bandar Lampung,ada,diskominfo_bandarlampungkota,bandarlampungkota.go.id
+Pemerintah Daerah,Lampung,Kota,Kota Metro,ada,diskominfo_metrokota,metrokota.go.id
+Pemerintah Daerah,Jawa Barat,Provinsi,Provinsi Jawa Barat,ada,diskominfo_jabarprov,jabarprov.go.id
+Pemerintah Daerah,Jawa Barat,Kabupaten,Kabupaten Bandung,ada,diskominfosp_bandungkab,bandungkab.go.id
+Pemerintah Daerah,Jawa Barat,Kabupaten,Kabupaten Bandung Barat,ada,diskominfos_bandungbaratkab,bandungbaratkab.go.id
+Pemerintah Daerah,Jawa Barat,Kabupaten,Kabupaten Bekasi,ada,diskominfops_bekasikab,bekasikab.go.id
+Pemerintah Daerah,Jawa Barat,Kabupaten,Kabupaten Bogor,ada,diskominfo_bogorkab,bogorkab.go.id
+Pemerintah Daerah,Jawa Barat,Kabupaten,Kabupaten Ciamis,ada,diskominfo_ciamiskab,ciamiskab.go.id
+Pemerintah Daerah,Jawa Barat,Kabupaten,Kabupaten Cianjur,ada,diskominfo_cianjurkab,cianjurkab.go.id
+Pemerintah Daerah,Jawa Barat,Kabupaten,Kabupaten Cirebon,ada,diskominfo_cirebonkab,cirebonkab.go.id
+Pemerintah Daerah,Jawa Barat,Kabupaten,Kabupaten Garut,ada,diskominfo_garutkab,garutkab.go.id
+Pemerintah Daerah,Jawa Barat,Kabupaten,Kabupaten Indramayu,ada,diskominfo_indramayukab,indramayukab.go.id
+Pemerintah Daerah,Jawa Barat,Kabupaten,Kabupaten Karawang,ada,diskominfo_karawangkab,karawangkab.go.id
+Pemerintah Daerah,Jawa Barat,Kabupaten,Kabupaten Kuningan,ada,diskominfo_kuningankab,kuningankab.go.id
+Pemerintah Daerah,Jawa Barat,Kabupaten,Kabupaten Majalengka,,,
+Pemerintah Daerah,Jawa Barat,Kabupaten,Kabupaten Purwakarta,ada,diskominfo_purwakartakab,purwakartakab.go.id
+Pemerintah Daerah,Jawa Barat,Kabupaten,Kabupaten Subang,ada,diskominfo_subangkab,subang.go.id
+Pemerintah Daerah,Jawa Barat,Kabupaten,Kabupaten Sukabumi,ada,diskominfos_sukabumikab,sukabumikab.go.id
+Pemerintah Daerah,Jawa Barat,Kabupaten,Kabupaten Sumedang,ada,diskominfops_sumedangkab,sumedangkab.go.id
+Pemerintah Daerah,Jawa Barat,Kabupaten,Kabupaten Tasikmalaya,ada,dishubkominfo_tasikmalayakab,tasikmalayakab.go.id
+Pemerintah Daerah,Jawa Barat,Kabupaten,Kabupaten Pangandaran,ada,diskominfo_pangandarankab,pangandarankab.go.id
+Pemerintah Daerah,Jawa Barat,Kota,Kota Bandung,ada,diskominfo_bdg,bandung.go.id
+Pemerintah Daerah,Jawa Barat,Kota,Kota Banjar,ada,diskominfo_banjarkota,banjarkota.go.id
+Pemerintah Daerah,Jawa Barat,Kota,Kota Bekasi,ada,diskominfosp_bekasikota,bekasikota.go.id
+Pemerintah Daerah,Jawa Barat,Kota,Kota Bogor,ada,diskominfo_kotabogor,kotabogor.go.id
+Pemerintah Daerah,Jawa Barat,Kota,Kota Cimahi,ada,diskominfo_cimahi,cimahikota.go.id
+Pemerintah Daerah,Jawa Barat,Kota,Kota Cirebon,ada,diskominfos_cirebonkota,cirebonkota.go.id
+Pemerintah Daerah,Jawa Barat,Kota,Kota Depok,ada,diskominfo_depok,depok.go.id
+Pemerintah Daerah,Jawa Barat,Kota,Kota Sukabumi,ada,diskominfo_sukabumikota,sukabumikota.go.id
+Pemerintah Daerah,Jawa Barat,Kota,Kota Tasikmalaya,ada,dishubkominfo_tasikmalayakab,tasikmalayakota.go.id
+Pemerintah Daerah,Banten,Provinsi,Provinsi Banten,ada,diskominfo_bantenprov,bantenprov.go.id
+Pemerintah Daerah,Banten,Kabupaten,Kabupaten Tangerang,ada,diskominfo_tangerangkab,tangerangkab.go.id
+Pemerintah Daerah,Banten,Kabupaten,Kabupaten Serang,ada,diskominfops_serangkab,serangkab.go.id
+Pemerintah Daerah,Banten,Kabupaten,Kabupaten Lebak,ada,diskominfosp_lebakkab,lebakkab.go.id
+Pemerintah Daerah,Banten,Kabupaten,Kabupaten Pandeglang,ada,diskominfoss_pandeglangkab,pandeglangkab.go.id
+Pemerintah Daerah,Banten,Kota,Kota Tangerang,ada,diskominfo_tangerangkab,tangerangkota.go.id
+Pemerintah Daerah,Banten,Kota,Kota Serang,ada,diskominfo_serangkota,serangkota.go.id
+Pemerintah Daerah,Banten,Kota,Kota Cilegon,ada,diskominfosp_cilegonkota,cilegon.go.id
+Pemerintah Daerah,Banten,Kota,Kota Tangerang Selatan,ada,diskominfo_tangerangselatan,tangerangselatankota.go.id
+Pemerintah Daerah,DKI Jakarta,Provinsi,Provinsi DKI Jakarta,ada,diskominfotik_jkt,jakarta.go.id
+Pemerintah Daerah,,Kabupaten,Kabupaten Kepulauan Seribu,,,
+Pemerintah Daerah,,Kota,Kota Jakarta Barat,,,
+Pemerintah Daerah,,Kota,Kota Jakarta Pusat,,,
+Pemerintah Daerah,,Kota,Kota Jakarta Selatan,,,
+Pemerintah Daerah,,Kota,Kota Jakarta Timur,,,
+Pemerintah Daerah,,Kota,Kota Jakarta Utara,,,
+Pemerintah Daerah,Jawa Tengah,Provinsi,Provinsi Jawa Tengah,ada,diskominfo_jatengprov,jatengprov.go.id
+Pemerintah Daerah,Jawa Tengah,Kabupaten,Kabupaten Banjarnegara,ada,diskominfo_banjarnegarakab,banjarnegarakab.go.id
+Pemerintah Daerah,Jawa Tengah,Kabupaten,Kabupaten Banyumas,ada,diskominfo_banyumaskab,banyumaskab.go.id
+Pemerintah Daerah,Jawa Tengah,Kabupaten,Kabupaten Batang,ada,diskominfo_batangkab,batangkab.go.id
+Pemerintah Daerah,Jawa Tengah,Kabupaten,Kabupaten Blora,ada,diskominfo_blorakab,blorakab.go.id
+Pemerintah Daerah,Jawa Tengah,Kabupaten,Kabupaten Boyolali,ada,diskominfo_boyolali,boyolali.go.id
+Pemerintah Daerah,Jawa Tengah,Kabupaten,Kabupaten Brebes,ada,diskominfos_brebeskab,brebeskab.go.id
+Pemerintah Daerah,Jawa Tengah,Kabupaten,Kabupaten Cilacap,ada,diskominfo_cilacapkab,cilacapkab.go.id
+Pemerintah Daerah,Jawa Tengah,Kabupaten,Kabupaten Demak,ada,diskominfo_demakkab,demakkab.go.id
+Pemerintah Daerah,Jawa Tengah,Kabupaten,Kabupaten Grobogan,ada,diskominfo_grobogankab,grobogan.go.id
+Pemerintah Daerah,Jawa Tengah,Kabupaten,Kabupaten Jepara,ada,diskominfo_jepara,jepara.go.id
+Pemerintah Daerah,Jawa Tengah,Kabupaten,Kabupaten Karanganyar,ada,diskominfo_karanganyarkab,karanganyarkab.go.id
+Pemerintah Daerah,Jawa Tengah,Kabupaten,Kabupaten Kebumen,ada,diskominfo_kebumenkab,kebumenkab.go.id
+Pemerintah Daerah,Jawa Tengah,Kabupaten,Kabupaten Kendal,ada,diskominfo_kendalkab,kendalkab.go.id
+Pemerintah Daerah,Jawa Tengah,Kabupaten,Kabupaten Klaten,ada,diskominfo_klatenkab,klatenkab.go.id
+Pemerintah Daerah,Jawa Tengah,Kabupaten,Kabupaten Kudus,ada,diskominfo_kuduskab,kuduskab.go.id
+Pemerintah Daerah,Jawa Tengah,Kabupaten,Kabupaten Magelang,ada,diskominfo_magelangkab,magelangkab.go.id
+Pemerintah Daerah,Jawa Tengah,Kabupaten,Kabupaten Pati,ada,diskominfo_patikab,patikab.go.id
+Pemerintah Daerah,Jawa Tengah,Kabupaten,Kabupaten Pekalongan,,diskominfo_pekalongankab,pekalongankab.go.id
+Pemerintah Daerah,Jawa Tengah,Kabupaten,Kabupaten Pemalang,,,
+Pemerintah Daerah,Jawa Tengah,Kabupaten,Kabupaten Purbalingga,ada,diskominfo_purbalinggakab,purbalinggakab.go.id
+Pemerintah Daerah,Jawa Tengah,Kabupaten,Kabupaten Purworejo,ada,diskominfosp_purworejokab,purworejokab.go.id
+Pemerintah Daerah,Jawa Tengah,Kabupaten,Kabupaten Rembang,ada,diskominfo_rembangkab,rembangkab.go.id
+Pemerintah Daerah,Jawa Tengah,Kabupaten,Kabupaten Semarang,ada,diskominfo_semarangkab,semarangkab.go.id
+Pemerintah Daerah,Jawa Tengah,Kabupaten,Kabupaten Sragen,ada,diskominfo_sragenkab,sragenkab.go.id
+Pemerintah Daerah,Jawa Tengah,Kabupaten,Kabupaten Sukoharjo,ada,diskominfo_sukoharjokab,sukoharjokab.go.id
+Pemerintah Daerah,Jawa Tengah,Kabupaten,Kabupaten Tegal,ada,diskominfo_tegalkab,tegalkab.go.id
+Pemerintah Daerah,Jawa Tengah,Kabupaten,Kabupaten Temanggung,,,
+Pemerintah Daerah,Jawa Tengah,Kabupaten,Kabupaten Wonogiri,ada,diskominfo_wonogirikab,wonogirikab.go.id
+Pemerintah Daerah,Jawa Tengah,Kabupaten,Kabupaten Wonosobo,ada,,
+Pemerintah Daerah,Jawa Tengah,Kota,Kota Magelang,ada,diskominfo_magelangkota,magelangkota.go.id
+Pemerintah Daerah,Jawa Tengah,Kota,Kota Pekalongan,ada,,
+Pemerintah Daerah,Jawa Tengah,Kota,Kota Salatiga,ada,diskominfo_salatigakota,salatiga.go.id
+Pemerintah Daerah,Jawa Tengah,Kota,Kota Semarang,ada,diskominfosp_semarangkota,semarangkota.go.id
+Pemerintah Daerah,Jawa Tengah,Kota,Kota Surakarta,ada,diskominfosp_surakarta,surakarta.go.id
+Pemerintah Daerah,Jawa Tengah,Kota,Kota Tegal,ada,diskominfo_tegal,tegalkota.go.id
+Pemerintah Daerah,DI Yogyakarta,Provinsi,Provinsi Daerah Istimewa Yogyakarta,ada,diskominfo_jogjaprov,jogjaprov.go.id
+Pemerintah Daerah,DI Yogyakarta,Kabupaten,Kabupaten Bantul,ada,diskominfo_bantulkab,bantulkab.go.id
+Pemerintah Daerah,DI Yogyakarta,Kabupaten,Kabupaten Gunung Kidul,ada,diskominfo_gunungkidulkab,gunungkidulkab.go.id
+Pemerintah Daerah,DI Yogyakarta,Kabupaten,Kabupaten Kulon Progo,ada,diskominfo_kulonprogokab,kulonprogokab.go.id
+Pemerintah Daerah,DI Yogyakarta,Kabupaten,Kabupaten Sleman,ada,diskominfo_slemankab,slemankab.go.id
+Pemerintah Daerah,DI Yogyakarta,Kota,Kota Yogyakarta,ada,diskominfo_jogjakota,jogjakota.go.id
+Pemerintah Daerah,Jawa Timur,Provinsi,Provinsi Jawa Timur,ada,diskominfo_jatimprov,jatimprov.go.id
+Pemerintah Daerah,Jawa Timur,Kabupaten,Kabupaten Bangkalan,ada,diskominfo_bangkalankab,bangkalankab.go.id
+Pemerintah Daerah,Jawa Timur,Kabupaten,Kabupaten Banyuwangi,ada,diskominfo_banyuwangikab,banyuwangikab.go.id
+Pemerintah Daerah,Jawa Timur,Kabupaten,Kabupaten Blitar,ada,diskominfo_blitarkab,blitarkab.go.id
+Pemerintah Daerah,Jawa Timur,Kabupaten,Kabupaten Bojonegoro,ada,diskominfo_bojonegorokab,bojonegorokab.go.id
+Pemerintah Daerah,Jawa Timur,Kabupaten,Kabupaten Bondowoso,ada,diskominfo_bondowosokab,bondowosokab.go.id
+Pemerintah Daerah,Jawa Timur,Kabupaten,Kabupaten Gresik,ada,diskominfo_gresikkab,gresikkab.go.id
+Pemerintah Daerah,Jawa Timur,Kabupaten,Kabupaten Jember,ada,diskominfo_jemberkab,jemberkab.go.id
+Pemerintah Daerah,Jawa Timur,Kabupaten,Kabupaten Jombang,ada,diskominfo_jombangkab,jombangkab.go.id
+Pemerintah Daerah,Jawa Timur,Kabupaten,Kabupaten Kediri,ada,diskominfo_kedirikab,kedirikab.go.id
+Pemerintah Daerah,Jawa Timur,Kabupaten,Kabupaten Lamongan,ada,diskominfo_lamongankab,lamongankab.go.id
+Pemerintah Daerah,Jawa Timur,Kabupaten,Kabupaten Lumajang,ada,diskominfo_lumajangkab,lumajangkab.go.id
+Pemerintah Daerah,Jawa Timur,Kabupaten,Kabupaten Madiun,ada,diskominfo_madiunkab,madiunkab.go.id
+Pemerintah Daerah,Jawa Timur,Kabupaten,Kabupaten Magetan,ada,diskominfo_magetankab,magetan.go.id
+Pemerintah Daerah,Jawa Timur,Kabupaten,Kabupaten Malang,ada,diskominfo_malangkab,malangkab.go.id
+Pemerintah Daerah,Jawa Timur,Kabupaten,Kabupaten Mojokerto,ada,diskominfo_mojokerto,mojokertokab.go.id
+Pemerintah Daerah,Jawa Timur,Kabupaten,Kabupaten Nganjuk,ada,diskominfo_nganjukkab,nganjukkab.go.id
+Pemerintah Daerah,Jawa Timur,Kabupaten,Kabupaten Ngawi,ada,diskomsantik_ngawikab,ngawikab.go.id
+Pemerintah Daerah,Jawa Timur,Kabupaten,Kabupaten Pacitan,ada,diskominfo_pacitankab,pacitankab.go.id
+Pemerintah Daerah,Jawa Timur,Kabupaten,Kabupaten Pamekasan,ada,diskominfo_pamekasankab,pamekasankab.go.id
+Pemerintah Daerah,Jawa Timur,Kabupaten,Kabupaten Pasuruan,ada,diskominfo_pasuruankab,pasuruankab.go.id
+Pemerintah Daerah,Jawa Timur,Kabupaten,Kabupaten Ponorogo,ada,diskominfo_ponorogokab,ponorogo.go.id
+Pemerintah Daerah,Jawa Timur,Kabupaten,Kabupaten Probolinggo,ada,diskominfo_probolinggokab,probolinggokab.go.id
+Pemerintah Daerah,Jawa Timur,Kabupaten,Kabupaten Sampang,ada,diskominfo_sampangkab,sampangkab.go.id
+Pemerintah Daerah,Jawa Timur,Kabupaten,Kabupaten Sidoarjo,ada,diskominfo_sidoarjokab,sidoarjokab.go.id
+Pemerintah Daerah,Jawa Timur,Kabupaten,Kabupaten Situbondo,ada,diskominfo_situbondokab,situbondokab.go.id
+Pemerintah Daerah,Jawa Timur,Kabupaten,Kabupaten Sumenep,ada,diskominfo_sumenepkab,sumenepkab.go.id
+Pemerintah Daerah,Jawa Timur,Kabupaten,Kabupaten Trenggalek,ada,diskominfo_trenggalekkab,trenggalekkab.go.id
+Pemerintah Daerah,Jawa Timur,Kabupaten,Kabupaten Tuban,ada,diskominfosp_tubankab,tubankab.go.id
+Pemerintah Daerah,Jawa Timur,Kabupaten,Kabupaten Tulungagung,ada,diskominfo_tulungagung,tulungagung.go.id
+Pemerintah Daerah,Jawa Timur,Kota,Kota Batu,ada,diskominfo_batukota,batukota.go.id
+Pemerintah Daerah,Jawa Timur,Kota,Kota Blitar,ada,diskominfo_blitarkota,blitarkota.go.id
+Pemerintah Daerah,Jawa Timur,Kota,Kota Kediri,ada,diskominfo_kedirikota,kedirikota.go.id
+Pemerintah Daerah,Jawa Timur,Kota,Kota Madiun,ada,diskominfo_madiunkota,madiunkota.go.id
+Pemerintah Daerah,Jawa Timur,Kota,Kota Malang,ada,diskominfo_malangkota,malangkota.go.id
+Pemerintah Daerah,Jawa Timur,Kota,Kota Mojokerto,ada,diskominfo_mojokertokota,mojokertokota.go.id
+Pemerintah Daerah,Jawa Timur,Kota,Kota Pasuruan,ada,diskominfos_pasuruankota,pasuruankota.go.id
+Pemerintah Daerah,Jawa Timur,Kota,Kota Probolinggo,ada,setda_probolinggokota,probolinggokota.go.id
+Pemerintah Daerah,Jawa Timur,Kota,Kota Surabaya,ada,diskominfo_surabaya,surabaya.go.id
+Pemerintah Daerah,Kalimantan Barat,Provinsi,Provinsi Kalimantan Barat,ada,diskominfo_kalbarprov,kalbarprov.go.id
+Pemerintah Daerah,Kalimantan Barat,Kabupaten,Kabupaten Bengkayang,,,
+Pemerintah Daerah,Kalimantan Barat,Kabupaten,Kabupaten Kapuas Hulu,ada,diskominfo_kapuashulukab,kapuashulukab.go.id
+Pemerintah Daerah,Kalimantan Barat,Kabupaten,Kabupaten Kayong Utara,ada,diskominfo_kayongutarakab,kayongutarakab.go.id
+Pemerintah Daerah,Kalimantan Barat,Kabupaten,Kabupaten Ketapang,ada,diskominfo_ketapangkab,ketapangkab.go.id
+Pemerintah Daerah,Kalimantan Barat,Kabupaten,Kabupaten Kubu Raya,ada,diskominfo_kuburayakab,kuburayakab.go.id
+Pemerintah Daerah,Kalimantan Barat,Kabupaten,Kabupaten Landak,ada,diskominfo_landakkab,landakkab.go.id
+Pemerintah Daerah,Kalimantan Barat,Kabupaten,Kabupaten Melawi,,,
+Pemerintah Daerah,Kalimantan Barat,Kabupaten,Kabupaten Mempawah,ada,diskominfo_mempawahkab,mempawahkab.go.id
+Pemerintah Daerah,Kalimantan Barat,Kabupaten,Kabupaten Sambas,ada,#REF!,#REF!
+Pemerintah Daerah,Kalimantan Barat,Kabupaten,Kabupaten Sanggau,,diskominfo_sambaskab,sambas.go.id
+Pemerintah Daerah,Kalimantan Barat,Kabupaten,Kabupaten Sekadau,ada,diskominfo_sekadaukab,sekadaukab.go.id
+Pemerintah Daerah,Kalimantan Barat,Kabupaten,Kabupaten Sintang,ada,diskominfo_sintangkab,sintang.go.id
+Pemerintah Daerah,Kalimantan Barat,Kota,Kota Pontianak,ada,diskominfo_pontianakkota,pontianak.go.id
+Pemerintah Daerah,Kalimantan Barat,Kota,Kota Singkawang,ada,diskominfo_singkawangkota,singkawangkota.go.id
+Pemerintah Daerah,Kalimantan Tengah,Provinsi,Provinsi Kalimantan Tengah,ada,diskominfo_kaltengprov,kalteng.go.id
+Pemerintah Daerah,Kalimantan Tengah,Kabupaten,Kabupaten Barito Selatan,ada,diskominfo_baritoselatankab,baritoselatankab.go.id
+Pemerintah Daerah,Kalimantan Tengah,Kabupaten,Kabupaten Barito Timur,ada,diskominfo_baritotimurkab,baritotimurkab.go.id
+Pemerintah Daerah,Kalimantan Tengah,Kabupaten,Kabupaten Barito Utara,ada,diskominfo_baritoutarakab,baritoutarakab.go.id
+Pemerintah Daerah,Kalimantan Tengah,Kabupaten,Kabupaten Gunung Mas,ada,diskominfo_gunungmaskab,gunungmaskab.go.id
+Pemerintah Daerah,Kalimantan Tengah,Kabupaten,Kabupaten Kapuas,ada,diskominfo_kapuaskab,kapuaskab.go.id
+Pemerintah Daerah,Kalimantan Tengah,Kabupaten,Kabupaten Katingan,ada,diskominfosp_katingankab,katingankab.go.id
+Pemerintah Daerah,Kalimantan Tengah,Kabupaten,Kabupaten Kotawaringin Barat,ada,diskominfosp_kobarkab,kotawaringinbaratkab.go.id
+Pemerintah Daerah,Kalimantan Tengah,Kabupaten,Kabupaten Kotawaringin Timur,ada,diskominfo_kotimkab,kotimkab.go.id
+Pemerintah Daerah,Kalimantan Tengah,Kabupaten,Kabupaten Lamandau,ada,diskominfo_lamandaukab,lamandaukab.go.id
+Pemerintah Daerah,Kalimantan Tengah,Kabupaten,Kabupaten Murung Raya,ada,diskominfo_murungrayakab,murungrayakab.go.id
+Pemerintah Daerah,Kalimantan Tengah,Kabupaten,Kabupaten Pulang Pisau,,,
+Pemerintah Daerah,Kalimantan Tengah,Kabupaten,Kabupaten Sukamara,ada,,
+Pemerintah Daerah,Kalimantan Tengah,Kabupaten,Kabupaten Seruyan,ada,diskominfo_seruyankab,seruyankab.go.id
+Pemerintah Daerah,Kalimantan Tengah,Kota,Kota Palangkaraya,ada,diskominfosp_palangkaraya,palangkaraya.go.id
+Pemerintah Daerah,Kalimantan Selatan,Provinsi,Provinsi Kalimantan Selatan,ada,diskominfo_kalselprov,kalselprov.go.id
+Pemerintah Daerah,Kalimantan Selatan,Kabupaten,Kabupaten Balangan,ada,diskominfo_balangankab,balangankab.go.id
+Pemerintah Daerah,Kalimantan Selatan,Kabupaten,Kabupaten Banjar,ada,diskominfosp_banjarkab,banjarkab.go.id
+Pemerintah Daerah,Kalimantan Selatan,Kabupaten,Kabupaten Barito Kuala,ada,diskominfo_baritokuala,baritokualakab.go.id
+Pemerintah Daerah,Kalimantan Selatan,Kabupaten,Kabupaten Hulu Sungai Selatan,ada,diskominfo_hulusskab,hulusungaiselatankab.go.id
+Pemerintah Daerah,Kalimantan Selatan,Kabupaten,Kabupaten Hulu Sungai Tengah,ada,diskominfo_hulustkab,hstkab.go.id
+Pemerintah Daerah,Kalimantan Selatan,Kabupaten,Kabupaten Hulu Sungai Utara,ada,diskominfo_hulusukab,hsu.go.id
+Pemerintah Daerah,Kalimantan Selatan,Kabupaten,Kabupaten Kotabaru,ada,diskominfo_kotabarukab,kotabarukab.go.id
+Pemerintah Daerah,Kalimantan Selatan,Kabupaten,Kabupaten Tabalong,ada,diskominfo_tabalongkab,tabalongkab.go.id
+Pemerintah Daerah,Kalimantan Selatan,Kabupaten,Kabupaten Tanah Bumbu,ada,diskominfops_tanahbumbukab,tanahbumbukab.go.id
+Pemerintah Daerah,Kalimantan Selatan,Kabupaten,Kabupaten Tanah Laut,ada,diskominfo_tanahlautkab,tanahlautkab.go.id
+Pemerintah Daerah,Kalimantan Selatan,Kabupaten,Kabupaten Tapin,ada,diskominfo_tapinkab,tapinkab.go.id
+Pemerintah Daerah,Kalimantan Selatan,Kota,Kota Banjarbaru,ada,diskominfo_banjarbarukota,banjarbarukota.go.id
+Pemerintah Daerah,Kalimantan Selatan,Kota,Kota Banjarmasin,ada,diskominfos_banjarmasinkota,banjarmasinkota.go.id
+Pemerintah Daerah,Kalimantan Timur,Provinsi,Provinsi Kalimantan Timur,ada,diskominfo_kaltimprov,kaltimprov.go.id
+Pemerintah Daerah,Kalimantan Timur,Kabupaten,Kabupaten Berau,ada,diskominfo_beraukab,beraukab.go.id
+Pemerintah Daerah,Kalimantan Timur,Kabupaten,Kabupaten Kutai Barat,ada,diskominfo_kutaibaratkab,kutaibaratkab.go.id
+Pemerintah Daerah,Kalimantan Timur,Kabupaten,Kabupaten Kutai Kartanegara,ada,diskominfo_kukarkab,kukarkab.go.id
+Pemerintah Daerah,Kalimantan Timur,Kabupaten,Kabupaten Kutai Timur,ada,diskominfops_kutaitimurkab,kutaitimurkab.go.id
+Pemerintah Daerah,Kalimantan Timur,Kabupaten,Kabupaten Paser,ada,diskominfosp_paserkab,paserkab.go.id
+Pemerintah Daerah,Kalimantan Timur,Kabupaten,Kabupaten Penajam Paser Utara,ada,diskominfo_penajamkab,penajamkab.go.id
+Pemerintah Daerah,Kalimantan Timur,Kabupaten,Kabupaten Mahakam Ulu,,,
+Pemerintah Daerah,Kalimantan Timur,Kota,Kota Balikpapan,ada,diskominfo_balikpapankota,balikpapan.go.id
+Pemerintah Daerah,Kalimantan Timur,Kota,Kota Bontang,ada,diskominfo_bontangkota,bontangkota.go.id
+Pemerintah Daerah,Kalimantan Timur,Kota,Kota Samarinda,,,
+Pemerintah Daerah,Kalimantan Utara,Provinsi,Provinsi Kalimantan Utara,ada,diskominfo_kaltaraprov,kaltaraprov.go.id
+Pemerintah Daerah,Kalimantan Utara,Kabupaten,Kabupaten Bulungan,ada,diskominfo_bulungankab,bulungan.go.id
+Pemerintah Daerah,Kalimantan Utara,Kabupaten,Kabupaten Malinau,,,
+Pemerintah Daerah,Kalimantan Utara,Kabupaten,Kabupaten Nunukan,ada,diskominfos_nunukankab,nunukankab.go.id
+Pemerintah Daerah,Kalimantan Utara,Kabupaten,Kabupaten Tana Tidung,ada,diskominfo_tanatidungkab,tanatidungkab.go.id
+Pemerintah Daerah,Kalimantan Utara,Kota,Kota Tarakan,,,
+Pemerintah Daerah,Sulawesi Selatan,Provinsi,Provinsi Sulawesi Selatan,ada,diskominfosp_sulselprov,sulselprov.go.id
+Pemerintah Daerah,Sulawesi Selatan,Kabupaten,Kabupaten Bantaeng,ada,diskominfo_bantaengkab,bantaengkab.go.id
+Pemerintah Daerah,Sulawesi Selatan,Kabupaten,Kabupaten Barru,,,
+Pemerintah Daerah,Sulawesi Selatan,Kabupaten,Kabupaten Bone,,,
+Pemerintah Daerah,Sulawesi Selatan,Kabupaten,Kabupaten Bulukumba,ada,diskominfo_bulukumbakab,bulukumbakab.go.id
+Pemerintah Daerah,Sulawesi Selatan,Kabupaten,Kabupaten Enrekang,ada,diskominfo_enrekangkab,enrekangkab.go.id
+Pemerintah Daerah,Sulawesi Selatan,Kabupaten,Kabupaten Gowa,ada,diskominfosp_gowakab,gowakab.go.id
+Pemerintah Daerah,Sulawesi Selatan,Kabupaten,Kabupaten Jeneponto,ada,diskominfos_jenepontokab,jenepontokab.go.id
+Pemerintah Daerah,Sulawesi Selatan,Kabupaten,Kabupaten Kepulauan Selayar,ada,diskominfosp_kepulauanselayar,kepulauanselayarkab.go.id
+Pemerintah Daerah,Sulawesi Selatan,Kabupaten,Kabupaten Luwu,ada,diskominfosp_luwukab,luwukab.go.id
+Pemerintah Daerah,Sulawesi Selatan,Kabupaten,Kabupaten Luwu Timur,ada,diskominfosp_luwutimurkab,luwutimurkab.go.id
+Pemerintah Daerah,Sulawesi Selatan,Kabupaten,Kabupaten Luwu Utara,ada,diskominfosp_luwuutarakab,luwuutarakab.go.id
+Pemerintah Daerah,Sulawesi Selatan,Kabupaten,Kabupaten Maros,ada,diskominfosp_maroskab,maroskab.go.id
+Pemerintah Daerah,Sulawesi Selatan,Kabupaten,Kabupaten Pangkajene dan Kepulauan,ada,diskominfo_pangkepkab,pangkepkab.go.id
+Pemerintah Daerah,Sulawesi Selatan,Kabupaten,Kabupaten Pinrang,ada,diskominfo_pinrangkab,pinrangkab.go.id
+Pemerintah Daerah,Sulawesi Selatan,Kabupaten,Kabupaten Sidenreng Rappang,,,
+Pemerintah Daerah,Sulawesi Selatan,Kabupaten,Kabupaten Sinjai,ada,diskominfo_sinjaikab,sinjaikab.go.id
+Pemerintah Daerah,Sulawesi Selatan,Kabupaten,Kabupaten Soppeng,ada,diskominfo_soppengkab,soppeng.go.id
+Pemerintah Daerah,Sulawesi Selatan,Kabupaten,Kabupaten Takalar,,diskominfo_takalarkab,takalarkab.go.id
+Pemerintah Daerah,Sulawesi Selatan,Kabupaten,Kabupaten Tana Toraja,,,
+Pemerintah Daerah,Sulawesi Selatan,Kabupaten,Kabupaten Toraja Utara,ada,diskominfosp_torajautarakab,torajautarakab.go.id
+Pemerintah Daerah,Sulawesi Selatan,Kabupaten,Kabupaten Wajo,ada,diskominfos_wajokab,wajokab.go.id
+Pemerintah Daerah,Sulawesi Selatan,Kota,Kota Makassar,ada,diskominfo_makassarkota,makassarkota.go.id
+Pemerintah Daerah,Sulawesi Selatan,Kota,Kota Palopo,ada,diskominfo_palopokota,palopokota.go.id
+Pemerintah Daerah,Sulawesi Selatan,Kota,Kota Parepare,ada,diskominfo_pareparekota,pareparekota.go.id
+Pemerintah Daerah,Sulawesi Barat,Provinsi,Provinsi Sulawesi Barat,ada,diskominfosp_sulbarprov,sulbarprov.go.id
+Pemerintah Daerah,Sulawesi Barat,Kabupaten,Kabupaten Majene,ada,diskominfosp_majenekab,majenekab.go.id
+Pemerintah Daerah,Sulawesi Barat,Kabupaten,Kabupaten Mamasa,,,
+Pemerintah Daerah,Sulawesi Barat,Kabupaten,Kabupaten Mamuju,,,
+Pemerintah Daerah,Sulawesi Barat,Kabupaten,Kabupaten Pasangkayu,ada,diskominfops_pasangkayukab,pasangkayukab.go.id
+Pemerintah Daerah,Sulawesi Barat,Kabupaten,Kabupaten Mamuju Tengah,ada,diskominfosp_mamujutengahkab,mamujutengahkab.go.id
+Pemerintah Daerah,Sulawesi Barat,Kabupaten,Kabupaten Polewali Mandar,ada,diskominfosp_polmankab,polmankab.go.id
+Pemerintah Daerah,Sulawesi Tenggara,Provinsi,Provinsi Sulawesi Tenggara,,,
+Pemerintah Daerah,Sulawesi Tenggara,Kabupaten,Kabupaten Bombana,,,
+Pemerintah Daerah,Sulawesi Tenggara,Kabupaten,Kabupaten Buton,,,
+Pemerintah Daerah,Sulawesi Tenggara,Kabupaten,Kabupaten Buton Utara,,,
+Pemerintah Daerah,Sulawesi Tenggara,Kabupaten,Kabupaten Kolaka,,diskominfo_kolakakab,kolakakab.go.id
+Pemerintah Daerah,Sulawesi Tenggara,Kabupaten,Kabupaten Kolaka Utara,,,
+Pemerintah Daerah,Sulawesi Tenggara,Kabupaten,Kabupaten Konawe,ada,diskominfo_konawekab,konawekab.go.id
+Pemerintah Daerah,Sulawesi Tenggara,Kabupaten,Kabupaten Konawe Selatan,ada,diskominfo_konaweselatankab,konaweselatankab.go.id
+Pemerintah Daerah,Sulawesi Tenggara,Kabupaten,Kabupaten Konawe Utara,,,
+Pemerintah Daerah,Sulawesi Tenggara,Kabupaten,Kabupaten Muna,ada,diskominfo_munakab,munakab.go.id
+Pemerintah Daerah,Sulawesi Tenggara,Kabupaten,Kabupaten Wakatobi,,,
+Pemerintah Daerah,Sulawesi Tenggara,Kabupaten,Kabupaten Kolaka Timur,,,
+Pemerintah Daerah,Sulawesi Tenggara,Kabupaten,Kabupaten Konawe Kepulauan,,,
+Pemerintah Daerah,Sulawesi Tenggara,Kabupaten,Kabupaten Muna Barat,ada,diskominfo_munabarat,munabarat.go.id
+Pemerintah Daerah,Sulawesi Tenggara,Kabupaten,Kabupaten Buton Tengah,,,
+Pemerintah Daerah,Sulawesi Tenggara,Kabupaten,Kabupaten Buton Selatan,,,
+Pemerintah Daerah,Sulawesi Tenggara,Kota,Kota Bau-Bau,ada,diskominfo_baubaukota,baubaukota.go.id
+Pemerintah Daerah,Sulawesi Tenggara,Kota,Kota Kendari,ada,diskominfo_kendarikota,kendarikota.go.id
+Pemerintah Daerah,Sulawesi Tengah,Provinsi,Provinsi Sulawesi Tengah,ada,diskominfo_sultengprov,sultengprov.go.id
+Pemerintah Daerah,Sulawesi Tengah,Kabupaten,Kabupaten Banggai,,,
+Pemerintah Daerah,Sulawesi Tengah,Kabupaten,Kabupaten Banggai Kepulauan,ada,diskominfo_banggaikep,banggaikep.go.id
+Pemerintah Daerah,Sulawesi Tengah,Kabupaten,Kabupaten Buol,ada,diskominfo_buolkab,buolkab.go.id
+Pemerintah Daerah,Sulawesi Tengah,Kabupaten,Kabupaten Donggala,,,
+Pemerintah Daerah,Sulawesi Tengah,Kabupaten,Kabupaten Morowali,ada,diskominfo_morowalikab,morowalikab.go.id
+Pemerintah Daerah,Sulawesi Tengah,Kabupaten,Kabupaten Parigi Moutong,,,
+Pemerintah Daerah,Sulawesi Tengah,Kabupaten,Kabupaten Poso,ada,diskominfosandi_posokab,posokab.go.id
+Pemerintah Daerah,Sulawesi Tengah,Kabupaten,Kabupaten Tojo Una-Una,ada,diskominfo_tojounauna,tojounauna.go.id
+Pemerintah Daerah,Sulawesi Tengah,Kabupaten,Kabupaten Toli-Toli,ada,diskominfosantik_tolitolikab,tolitolikab.go.id
+Pemerintah Daerah,Sulawesi Tengah,Kabupaten,Kabupaten Sigi,ada,diskominfo_sigikab,sigikab.go.id
+Pemerintah Daerah,Sulawesi Tengah,Kabupaten,Kabupaten Banggai Laut,,,
+Pemerintah Daerah,Sulawesi Tengah,Kabupaten,Kabupaten Morowali Utara,ada,diskominfo_morowaliutarakab,morowaliutarakab.go.id
+Pemerintah Daerah,Sulawesi Tengah,Kota,Kota Palu,ada,diskominfo_palukota,palukota.go.id
+Pemerintah Daerah,Gorontalo,Provinsi,Provinsi Gorontalo,ada,diskominfo_gorontaloprov,gorontaloprov.go.id
+Pemerintah Daerah,Gorontalo,Kabupaten,Kabupaten Boalemo,ada,diskominfo_boalemokab,boalemokab.go.id
+Pemerintah Daerah,Gorontalo,Kabupaten,Kabupaten Bone Bolango,ada,diskominfo_bonebolangokab,bonebolangokab.go.id
+Pemerintah Daerah,Gorontalo,Kabupaten,Kabupaten Gorontalo,ada,diskominfo_gorontalokab,gorontalokab.go.id
+Pemerintah Daerah,Gorontalo,Kabupaten,Kabupaten Gorontalo Utara,ada,diskominfo_gorutkab,gorutkab.go.id
+Pemerintah Daerah,Gorontalo,Kabupaten,Kabupaten Pohuwato,ada,diskominfo_pohuwatokab,pohuwatokab.go.id
+Pemerintah Daerah,Gorontalo,Kota,Kota Gorontalo,ada,diskominfo_gorontalokota,gorontalokota.go.id
+Pemerintah Daerah,Sulawesi Utara,Provinsi,Provinsi Sulawesi Utara,ada,diskomsantik_sulutprov,sulutprov.go.id
+Pemerintah Daerah,Sulawesi Utara,Kabupaten,Kabupaten Bolaang Mongondow,ada,diskominfo_bolmongkab,bolmongkab.go.id
+Pemerintah Daerah,Sulawesi Utara,Kabupaten,Kabupaten Bolaang Mongondow Selatan,ada,diskominfo_bolselkab,bolselkab.go.id
+Pemerintah Daerah,Sulawesi Utara,Kabupaten,Kabupaten Bolaang Mongondow Timur,ada,diskominfo_boltimkab,boltimkab.go.id
+Pemerintah Daerah,Sulawesi Utara,Kabupaten,Kabupaten Bolaang Mongondow Utara,ada,diskominfo_bolmutkab,bolmutkab.go.id
+Pemerintah Daerah,Sulawesi Utara,Kabupaten,Kabupaten Kepulauan Sangihe,ada,diskominfo_sangihekab,sangihekab.go.id
+Pemerintah Daerah,Sulawesi Utara,Kabupaten,Kabupaten Kepulauan Siau Tagulandang Biaro,,,
+Pemerintah Daerah,Sulawesi Utara,Kabupaten,Kabupaten Kepulauan Talaud,,,
+Pemerintah Daerah,Sulawesi Utara,Kabupaten,Kabupaten Minahasa,,,
+Pemerintah Daerah,Sulawesi Utara,Kabupaten,Kabupaten Minahasa Selatan,ada,diskominfo_minselkab,minselkab.go.id
+Pemerintah Daerah,Sulawesi Utara,Kabupaten,Kabupaten Minahasa Tenggara,ada,diskominfo_mitrakab,mitrakab.go.id
+Pemerintah Daerah,Sulawesi Utara,Kabupaten,Kabupaten Minahasa Utara,,,
+Pemerintah Daerah,Sulawesi Utara,Kota,Kota Bitung,ada,diskominfo_bitungkota,bitungkota.go.id
+Pemerintah Daerah,Sulawesi Utara,Kota,Kota Kotamobagu,ada,diskominfo_kotamobagu,kotamobagu.go.id
+Pemerintah Daerah,Sulawesi Utara,Kota,Kota Manado,ada,diskominfo_manadokota,manadokota.go.id
+Pemerintah Daerah,Sulawesi Utara,Kota,Kota Tomohon,ada,diskominfo_tomohon,tomohon.go.id
+Pemerintah Daerah,Bali,Provinsi,Provinsi Bali,ada,diskominfos_baliprov,baliprov.go.id
+Pemerintah Daerah,Bali,Kabupaten,Kabupaten Badung,ada,diskominfo_badungkab,badungkab.go.id
+Pemerintah Daerah,Bali,Kabupaten,Kabupaten Bangli,,,
+Pemerintah Daerah,Bali,Kabupaten,Kabupaten Buleleng,ada,diskominfops_bulelengkab,bulelengkab.go.id
+Pemerintah Daerah,Bali,Kabupaten,Kabupaten Gianyar,ada,diskominfo_gianyarkab,gianyarkab.go.id
+Pemerintah Daerah,Bali,Kabupaten,Kabupaten Jembrana,ada,diskominfo_jembranakab,jembranakab.go.id
+Pemerintah Daerah,Bali,Kabupaten,Kabupaten Karangasem,ada,diskominfo_karangasemkab,karangasemkab.go.id
+Pemerintah Daerah,Bali,Kabupaten,Kabupaten Klungkung,ada,diskominfo_klungkungkab,klungkungkab.go.id
+Pemerintah Daerah,Bali,Kabupaten,Kabupaten Tabanan,ada,diskominfo_tabanankab,tabanankab.go.id
+Pemerintah Daerah,Bali,Kota,Kota Denpasar,ada,diskominfo_denpasarkota,denpasarkota.go.id
+Pemerintah Daerah,Nusa Tenggara Barat,Provinsi,Provinsi Nusa Tenggara Barat,ada,diskominfotik_ntbprov,ntbprov.go.id
+Pemerintah Daerah,Nusa Tenggara Barat,Kabupaten,Kabupaten Bima,,,
+Pemerintah Daerah,Nusa Tenggara Barat,Kabupaten,Kabupaten Dompu,ada,diskominfo_dompukab,dompukab.go.id
+Pemerintah Daerah,Nusa Tenggara Barat,Kabupaten,Kabupaten Lombok Barat,ada,diskominfo_lombokbaratkab,lombokbaratkab.go.id
+Pemerintah Daerah,Nusa Tenggara Barat,Kabupaten,Kabupaten Lombok Tengah,ada,diskominfo_lomboktengahkab,lomboktengahkab.go.id
+Pemerintah Daerah,Nusa Tenggara Barat,Kabupaten,Kabupaten Lombok Timur,ada,diskominfos_lomboktimurkab,lomboktimurkab.go.id
+Pemerintah Daerah,Nusa Tenggara Barat,Kabupaten,Kabupaten Lombok Utara,ada,diskominfo_lombokutarakab,lombokutarakab.go.id
+Pemerintah Daerah,Nusa Tenggara Barat,Kabupaten,Kabupaten Sumbawa,ada,diskominfosp_sumbawakab,sumbawakab.go.id
+Pemerintah Daerah,Nusa Tenggara Barat,Kabupaten,Kabupaten Sumbawa Barat,ada,diskominfo_sumbawabaratkab,sumbawabaratkab.go.id
+Pemerintah Daerah,Nusa Tenggara Barat,Kota,Kota Bima,ada,diskominfotik_bimakota,bimakota.go.id
+Pemerintah Daerah,Nusa Tenggara Barat,Kota,Kota Mataram,ada,diskominfo_mataramkota,mataramkota.go.id
+Pemerintah Daerah,Nusa Tenggara Timur,Provinsi,Provinsi Nusa Tenggara Timur,ada,diskominfo_nttprov,nttprov.go.id
+Pemerintah Daerah,Nusa Tenggara Timur,Kabupaten,Kabupaten Alor,,,
+Pemerintah Daerah,Nusa Tenggara Timur,Kabupaten,Kabupaten Belu,ada,diskominfo_belukab,belukab.go.id
+Pemerintah Daerah,Nusa Tenggara Timur,Kabupaten,Kabupaten Ende,,,
+Pemerintah Daerah,Nusa Tenggara Timur,Kabupaten,Kabupaten Flores Timur,ada,diskominfo_florestimurkab,florestimurkab.go.id
+Pemerintah Daerah,Nusa Tenggara Timur,Kabupaten,Kabupaten Kupang,ada,diskominfo_kupangkab,kupangkab.go.id
+Pemerintah Daerah,Nusa Tenggara Timur,Kabupaten,Kabupaten Lembata,,,
+Pemerintah Daerah,Nusa Tenggara Timur,Kabupaten,Kabupaten Manggarai,,,
+Pemerintah Daerah,Nusa Tenggara Timur,Kabupaten,Kabupaten Manggarai Barat,ada,diskominfo_manggaraibaratkab,manggaraibaratkab.go.id
+Pemerintah Daerah,Nusa Tenggara Timur,Kabupaten,Kabupaten Manggarai Timur,,,
+Pemerintah Daerah,Nusa Tenggara Timur,Kabupaten,Kabupaten Ngada,ada,diskominfo_ngadakab,ngadakab.go.id
+Pemerintah Daerah,Nusa Tenggara Timur,Kabupaten,Kabupaten Nagekeo,,,
+Pemerintah Daerah,Nusa Tenggara Timur,Kabupaten,Kabupaten Rote Ndao,ada,diskominfo_rotendaokab,rotendaokab.go.id
+Pemerintah Daerah,Nusa Tenggara Timur,Kabupaten,Kabupaten Sabu Raijua,,,
+Pemerintah Daerah,Nusa Tenggara Timur,Kabupaten,Kabupaten Sikka,ada,diskominfo_sikkakab,sikkakab.go.id
+Pemerintah Daerah,Nusa Tenggara Timur,Kabupaten,Kabupaten Sumba Barat,ada,diskominfops_sumbabaratkab,sumbabaratkab.go.id
+Pemerintah Daerah,Nusa Tenggara Timur,Kabupaten,Kabupaten Sumba Barat Daya,,,
+Pemerintah Daerah,Nusa Tenggara Timur,Kabupaten,Kabupaten Sumba Tengah,ada,diskominfo_sumbatengahkab,sumbatengahkab.go.id
+Pemerintah Daerah,Nusa Tenggara Timur,Kabupaten,Kabupaten Sumba Timur,ada,diskominfo_sumbatimurkab,sumbatimurkab.go.id
+Pemerintah Daerah,Nusa Tenggara Timur,Kabupaten,Kabupaten Timor Tengah Selatan,,,
+Pemerintah Daerah,Nusa Tenggara Timur,Kabupaten,Kabupaten Timor Tengah Utara,,,
+Pemerintah Daerah,Nusa Tenggara Timur,Kabupaten,Kabupaten Malaka,,,
+Pemerintah Daerah,Nusa Tenggara Timur,Kota,Kota Kupang,ada,diskominfo_kupangkota,kupangkota.go.id
+Pemerintah Daerah,Maluku,Provinsi,Provinsi Maluku,ada,diskominfo_malukuprov,malukuprov.go.id
+Pemerintah Daerah,Maluku,Kabupaten,Kabupaten Buru,ada,diskominfo_burukab,burukab.go.id
+Pemerintah Daerah,Maluku,Kabupaten,Kabupaten Buru Selatan,ada,diskominfo_burselkab,burselkab.go.id
+Pemerintah Daerah,Maluku,Kabupaten,Kabupaten Kepulauan Aru,ada,diskominfo_kepulauanarukab,kepulauanarukab.go.id
+Pemerintah Daerah,Maluku,Kabupaten,Kabupaten Maluku Barat Daya,ada,diskominfo_malukubaratdayakab,malukubaratdayakab.go.id
+Pemerintah Daerah,Maluku,Kabupaten,Kabupaten Maluku Tengah,ada,diskominfo_maltengkab,maltengkab.go.id
+Pemerintah Daerah,Maluku,Kabupaten,Kabupaten Maluku Tenggara,,,
+Pemerintah Daerah,Maluku,Kabupaten,Kabupaten Maluku Tenggara Barat,,,
+Pemerintah Daerah,Maluku,Kabupaten,Kabupaten Seram Bagian Barat,ada,diskominfo_sbbkab,sbbkab.go.id
+Pemerintah Daerah,Maluku,Kabupaten,Kabupaten Seram Bagian Timur,ada,diskominfo_serambagiantimurkab,serambagiantimurkab.go.id
+Pemerintah Daerah,Maluku,Kota,Kota Ambon,ada,diskominfop_ambonkota,ambon.go.id
+Pemerintah Daerah,Maluku,Kota,Kota Tual,ada,diskominfo_tualkota,tualkota.go.id
+Pemerintah Daerah,Maluku Utara,Provinsi,Provinsi Maluku Utara,ada,diskominfosan_malutprov,malutprov.go.id
+Pemerintah Daerah,Maluku Utara,Kabupaten,Kabupaten Halmahera Barat,ada,diskominfo_halbarkab,halbarkab.go.id
+Pemerintah Daerah,Maluku Utara,Kabupaten,Kabupaten Halmahera Tengah,ada,diskominfosandi_haltengkab,haltengkab.go.id
+Pemerintah Daerah,Maluku Utara,Kabupaten,Kabupaten Halmahera Utara,ada,diskominfo_halmaherautarakab,halmaherautarakab.go.id
+Pemerintah Daerah,Maluku Utara,Kabupaten,Kabupaten Halmahera Selatan,ada,diskominfosp_halmaheraselatan,halmaheraselatankab.go.id
+Pemerintah Daerah,Maluku Utara,Kabupaten,Kabupaten Kepulauan Sula,,,
+Pemerintah Daerah,Maluku Utara,Kabupaten,Kabupaten Halmahera Timur,,,
+Pemerintah Daerah,Maluku Utara,Kabupaten,Kabupaten Pulau Morotai,ada,diskominfo_pulaumorotaikab,pulaumorotaikab.go.id
+Pemerintah Daerah,Maluku Utara,Kabupaten,Kabupaten Pulau Taliabu,,,
+Pemerintah Daerah,Maluku Utara,Kota,Kota Ternate,ada,diskominfo_ternatekota,ternatekota.go.id
+Pemerintah Daerah,Maluku Utara,Kota,Kota Tidore Kepulauan,ada,diskominfops_tidorekota,tidorekota.go.id
+Pemerintah Daerah,Papua Barat,Provinsi,Provinsi Papua Barat,,,
+Pemerintah Daerah,Papua Barat,Kabupaten,Kabupaten Fakfak,,,
+Pemerintah Daerah,Papua Barat,Kabupaten,Kabupaten Kaimana,,,
+Pemerintah Daerah,Papua Barat,Kabupaten,Kabupaten Manokwari,ada,diskominfo_manokwarikab,manokwarikab.go.id
+Pemerintah Daerah,Papua Barat,Kabupaten,Kabupaten Teluk Bintuni,,,
+Pemerintah Daerah,Papua Barat,Kabupaten,Kabupaten Pegunungan Arfak ,,,
+Pemerintah Daerah,Papua Barat,Kabupaten,Kabupaten Teluk Wondama,,,
+Pemerintah Daerah,Papua Barat,Kabupaten,Kabupaten Manokwari Selatan,,,
+Pemerintah Daerah,Papua Barat Daya,Provinsi,Provinsi Papua Barat Daya,,,
+Pemerintah Daerah,Papua Barat Daya,Kabupaten,Kabupaten Tambrauw,,,
+Pemerintah Daerah,Papua Barat Daya,Kabupaten,Kabupaten Maybrat,,,
+Pemerintah Daerah,Papua Barat Daya,Kabupaten,Kabupaten Sorong Selatan,,,
+Pemerintah Daerah,Papua Barat Daya,Kabupaten,Kabupaten Sorong ,ada,diskominfo_sorongkab,sorongkab.go.id
+Pemerintah Daerah,Papua Barat Daya,Kabupaten,Kabupaten Raja Ampat,,,
+Pemerintah Daerah,Papua Barat Daya,Kota,Kota Sorong,,,
+Pemerintah Daerah,Papua,Provinsi,Provinsi Papua,ada,diskominfo_papuaprov,papua.go.id
+Pemerintah Daerah,Papua,Kabupaten,Kabupaten supiori,,,
+Pemerintah Daerah,Papua,Kabupaten,Kabupaten Biak Numfor,,,
+Pemerintah Daerah,Papua,Kabupaten,Kabupaten Memberano Raya,,,
+Pemerintah Daerah,Papua,Kabupaten,Kabupaten Sarmi ,,,
+Pemerintah Daerah,Papua,Kota,Kota Jayapura,,,
+Pemerintah Daerah,Papua,Kabupaten,Kabupaten Jayapura,,,
+Pemerintah Daerah,Papua,Kabupaten,Kabupaten Waropen,,,
+Pemerintah Daerah,Papua,Kabupaten,Kabupaten Keerom,,,
+Pemerintah Daerah,Papua,Kabupaten,Kabupaten Kepulauan Yapen,,,
+Pemerintah Daerah,Papua Selatan,Provinsi,Provinsi Papua Selatan,,,
+Pemerintah Daerah,Papua Selatan,Kabupaten,Kabupaten Boven Digoel,,,
+Pemerintah Daerah,Papua Selatan,Kabupaten,Kabupaten Asmat,,,
+Pemerintah Daerah,Papua Selatan,Kabupaten,Kabupaten Mappi,,,
+Pemerintah Daerah,Papua Selatan,Kabupaten,Kabupaten Merauke,,,
+Pemerintah Daerah,Papua Tengah,Provinsi,Provinsi Papua Tengah,,,
+Pemerintah Daerah,Papua Tengah,Kabupaten,Kabupaten Dogiyai,,,
+Pemerintah Daerah,Papua Tengah,Kabupaten,Kabupaten Nabire ,ada,diskominfo_nabirekab,nabirekab.go.id
+Pemerintah Daerah,Papua Tengah,Kabupaten,Kabupaten Deiyai,,,
+Pemerintah Daerah,Papua Tengah,Kabupaten,Kabupaten Paniai,,,
+Pemerintah Daerah,Papua Tengah,Kabupaten,Kabupaten Intan Jaya,,,
+Pemerintah Daerah,Papua Tengah,Kabupaten,Kabupaten Puncak,,,
+Pemerintah Daerah,Papua Tengah,Kabupaten,Kabupaten Puncak Jaya,,,
+Pemerintah Daerah,Papua Tengah,Kabupaten,Kabupaten Mimika,,,
+Pemerintah Daerah,Papua Pegunungan,Provinsi,Provinsi Papua Pegunungan,,,
+Pemerintah Daerah,Papua Pegunungan,Kabupaten,Kabupaten Mamberamo Tengah,,,
+Pemerintah Daerah,Papua Pegunungan,Kabupaten,Kabupaten Tolikara,,,
+Pemerintah Daerah,Papua Pegunungan,Kabupaten,Kabupaten Jayawijaya,,,
+Pemerintah Daerah,Papua Pegunungan,Kabupaten,Kabupaten Yahukimo,,,
+Pemerintah Daerah,Papua Pegunungan,Kabupaten,Kabupaten Yalimo,,,
+Pemerintah Daerah,Papua Pegunungan,Kabupaten,Kabupaten Pegunungan Bintang,,,
+Pemerintah Daerah,Papua Pegunungan,Kabupaten,Kabupaten Lanny Jaya,,,
+Pemerintah Daerah,Papua Pegunungan,Kabupaten,Kabupaten Nduga,,,
