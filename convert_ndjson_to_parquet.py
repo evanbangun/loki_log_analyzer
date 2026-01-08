@@ -28,8 +28,8 @@ logger = logging.getLogger(__name__)
 
 # Configuration
 CONFIG = {
-    'ndjson_dir': 'E:/SPLP_Logs',
-    'parquet_dir': 'SPLP_Logs_parquet',
+    'ndjson_dir': 'logs',
+    'parquet_dir': 'SPLP_Logs_parquet_base',
     'batch_size': 10000,  # Process logs in batches
     'compression': 'snappy',
     'backup_dir': 'backup_parquet',

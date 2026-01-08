@@ -2,7 +2,7 @@ import os
 import csv
 
 # Set the directory to search for CSV files (current directory)
-directory = 'E:/Processed Logs'
+directory = 'F:/Processed Logs UNCLEAN/Bulan3'
 
 # Find all CSV files in the directory
 csv_files = [f for f in os.listdir(directory) if f.lower().endswith('.csv') and os.path.isfile(os.path.join(directory, f))]

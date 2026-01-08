@@ -126,7 +126,7 @@ if choice == '2':
 else:
     print('Processing all available data...')
 
-folder_path = 'E:/Processed Logs'
+folder_path = 'Processed Logs'
 print('Finding all CSV files in ' + folder_path + ' ...')
 all_csv_files = glob.glob(os.path.join(folder_path, '*.csv'))
 

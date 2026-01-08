@@ -13,7 +13,7 @@ from datetime import datetime
 folder = Path("logs")
 
 if not folder.exists() or not any(folder.iterdir()):
-    print("'logs' folder tidak ditemukan")
+    print("Folder tidak ditemukan")
     sys.exit()
 
 
