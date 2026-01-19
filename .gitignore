@@ -16,3 +16,4 @@
 *.EXE
 *.log
 *.LOG
+venv/
