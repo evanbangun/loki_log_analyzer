@@ -165,17 +165,32 @@ def ingest_loki_to_ndjson(
                     total_success += 1
 
             total_records += logs_count
-            if max_time_ns is None or max_time_ns < current_end_ns:
+            
+            # If no results, move to next hour
+            if max_time_ns is None or logs_count == 0:
                 current_start_ns = current_end_ns
                 current_end_ns = min(current_start_ns + HOUR_STEP_NS, end_ns)
                 continue
-
-            if max_time_ns >= current_end_ns:
-                current_start_ns = max_time_ns + 1
+            
+            # If we got fewer results than the limit, we've exhausted this time window
+            # Move to next hour
+            if logs_count < LIMIT:
+                current_start_ns = current_end_ns
                 current_end_ns = min(current_start_ns + HOUR_STEP_NS, end_ns)
                 continue
-
-            current_start_ns = max_time_ns + 1
+            
+            # If we hit the limit (logs_count == LIMIT), we need to paginate
+            # If max_time_ns is still within the current hour, continue querying from max_time_ns + 1
+            # within the SAME hour window
+            if max_time_ns < current_end_ns:
+                # Continue paginating within the same hour
+                current_start_ns = max_time_ns + 1
+                # Keep current_end_ns the same (stay in same hour)
+                continue
+            
+            # If max_time_ns >= current_end_ns, we've reached or exceeded the hour boundary
+            # Move to next hour
+            current_start_ns = current_end_ns
             current_end_ns = min(current_start_ns + HOUR_STEP_NS, end_ns)
 
     os.replace(tmp_path, local_path)
