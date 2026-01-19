@@ -23,7 +23,7 @@ logger = logging.getLogger(__name__)
 
 MINIO_CONN_ID = "SPLP_minio"
 MINIO_BUCKET = "splp-logs-raw"
-MINIO_PREFIX = "year={year}/month={month:02}/day={day:02}"
+MINIO_PREFIX = "year={year}/month={month}/day={day}"
 TMP_LOCAL_DIR = "/tmp/splp-logs-raw"
 
 
@@ -114,8 +114,8 @@ def ingest_loki_to_ndjson(
     local_dir = os.path.join(
         TMP_LOCAL_DIR,
         f"year={start_dt.year}",
-        f"month={start_dt.month:02}",
-        f"day={start_dt.day:02}",
+        f"month={start_dt.month}",
+        f"day={start_dt.day}",
     )
     os.makedirs(local_dir, exist_ok=True)
     local_path = os.path.join(local_dir, "logs.ndjson")

@@ -62,7 +62,7 @@ logger = logging.getLogger(__name__)
 MINIO_CONN_ID = "SPLP_minio"
 MINIO_NDJSON_BUCKET = "splp-logs-raw"
 MINIO_PARQUET_BUCKET = "splp-logs"
-MINIO_PREFIX = "year={year}/month={month:02}/day={day:02}"
+MINIO_PREFIX = "year={year}/month={month}/day={day}"
 TMP_LOCAL_DIR = "/tmp/splp-logs"
 
 
@@ -127,8 +127,8 @@ def _build_local_ndjson_path(day: datetime) -> str:
     return os.path.join(
         TMP_LOCAL_DIR,
         f"year={day.year}",
-        f"month={day.month:02}",
-        f"day={day.day:02}",
+        f"month={day.month}",
+        f"day={day.day}",
         "logs.ndjson",
     )
 
@@ -137,8 +137,8 @@ def _build_parquet_path(base_dir: str, day: datetime) -> str:
     return os.path.join(
         base_dir,
         f"year={day.year}",
-        f"month={day.month:02}",
-        f"day={day.day:02}",
+        f"month={day.month}",
+        f"day={day.day}",
         "logs.parquet",
     )
 
