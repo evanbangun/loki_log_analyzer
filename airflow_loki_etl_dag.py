@@ -26,8 +26,8 @@ with DAG(
     dag_id="loki_ndjson_to_parquet_daily",
     description="Ingest Loki logs to NDJSON and convert to Parquet daily.",
     schedule="0 7 * * *",
-    start_date=pendulum.datetime(2025, 1, 1, tz="Asia/Jakarta"),
-    catchup=False,
+    start_date=pendulum.datetime(2026, 1, 1, tz="Asia/Jakarta"),
+    catchup=True,  # Set to True to automatically process missed dates
     max_active_runs=1,
     default_args={
         "owner": "airflow",
