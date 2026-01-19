@@ -17,3 +17,4 @@
 *.log
 *.LOG
 venv/
+.DS_Store
