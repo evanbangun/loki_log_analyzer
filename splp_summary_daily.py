@@ -57,6 +57,35 @@ ORDER BY
     apiname
 """
 
+def refresh_dremio_metadata(**context):
+    """
+    Refresh Dremio metadata to ensure latest partitions are available.
+    
+    Args:
+        **context: Airflow context
+    """
+    try:
+        logger.info("Connecting to Dremio for metadata refresh...")
+        token = get_token(
+            uri=f"http://{DREMIO_HOST}:{DREMIO_LOGIN_PORT}/apiv2/login",
+            payload={"userName": DREMIO_USER, "password": DREMIO_PASS},
+        )
+        dremio = DremioConnection(
+            token,
+            f"grpc://{DREMIO_HOST}:{DREMIO_FLIGHT_PORT}"
+        )
+        
+        refresh_sql = 'ALTER TABLE "minio"."splp-logs" REFRESH METADATA'
+        logger.info("Refreshing Dremio metadata for splp-logs table...")
+        # Execute the refresh command
+        dremio.toPandas(refresh_sql)
+        logger.info("Dremio metadata refresh completed successfully")
+        
+    except Exception as e:
+        logger.error(f"Failed to refresh Dremio metadata: {e}", exc_info=True)
+        raise
+
+
 def get_data(**context):
     """
     Process daily summary data from Dremio and load into Postgres.
@@ -70,9 +99,9 @@ def get_data(**context):
         logical_date = context.get("data_interval_start") or context.get("logical_date")
         
         if logical_date is None:
-            # Fallback to current date if not provided (e.g., manual trigger without date)
-            logical_date = datetime.now()
-            logger.warning("No data_interval_start or logical_date in context, using current date")
+            # Fallback to D-1 (yesterday) if not provided (e.g., manual trigger without date)
+            logical_date = datetime.now() - timedelta(days=1)
+            logger.warning("No data_interval_start or logical_date in context, using D-1 (yesterday)")
         
         # Handle timezone-aware datetime objects
         if hasattr(logical_date, 'tzinfo') and logical_date.tzinfo is not None:
@@ -226,7 +255,14 @@ with DAG(
     tags=["splp", "summary", "daily", "dremio", "postgres"],
 ) as dag:
 
+    refresh_metadata = PythonOperator(
+        task_id="refresh_dremio_metadata",
+        python_callable=refresh_dremio_metadata,
+    )
+
     run_etl = PythonOperator(
         task_id="run_splp_summary_daily_etl",
         python_callable=get_data,
     )
+
+    refresh_metadata >> run_etl
