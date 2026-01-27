@@ -6,6 +6,7 @@ from datetime import datetime, timedelta
 from dremio_simple_query.connect import get_token, DremioConnection
 import pandas as pd
 from sqlalchemy import text
+import pendulum
 
 # --------------------
 # Config
@@ -241,8 +242,8 @@ def get_data(**context):
 with DAG(
     dag_id="splp_summary_daily",
     description="Daily summary ETL: Aggregate API logs from Dremio and load into Postgres",
-    start_date=datetime(2025, 1, 1),
-    schedule="0 10 * * *",  # run daily at 10 AM (3 hours after loki_ndjson_to_parquet_daily at 7 AM)
+    schedule="0 7 * * *",
+    start_date=pendulum.datetime(2026, 1, 1, tz="Asia/Jakarta"),
     catchup=False,
     max_active_runs=1,
     default_args={
