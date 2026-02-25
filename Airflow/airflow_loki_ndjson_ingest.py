@@ -59,8 +59,7 @@ def resolve_window(
         return start, end
 
     if logical_date:
-        # For a daily DAG, logical_date (data_interval_start) is already the start of the day to process
-        start = logical_date.replace(
+        start = (logical_date - timedelta(days=1)).replace(
             hour=0, minute=0, second=0, microsecond=0, tzinfo=None
         )
         end = start + timedelta(days=1)

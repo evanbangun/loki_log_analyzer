@@ -104,8 +104,7 @@ def resolve_window(
         return start, end
 
     if logical_date:
-        # For a daily DAG, logical_date (data_interval_start) is already the start of the day to process
-        start = logical_date.replace(
+        start = (logical_date - timedelta(days=1)).replace(
             hour=0, minute=0, second=0, microsecond=0, tzinfo=None
         )
         end = start + timedelta(days=1)
@@ -158,27 +157,6 @@ def _upload_parquet_to_minio(local_path: str, day: datetime) -> None:
         bucket_name=MINIO_PARQUET_BUCKET,
         replace=True,
     )
-
-
-def _delete_ndjson_from_minio(day: datetime) -> None:
-    """Delete the raw NDJSON object from MinIO after successful parquet upload."""
-    s3 = S3Hook(aws_conn_id=MINIO_CONN_ID)
-    key = _build_minio_ndjson_key(day)
-    s3.delete_objects(bucket=MINIO_NDJSON_BUCKET, keys=[key])
-    logger.info("Deleted raw NDJSON from MinIO: s3://%s/%s", MINIO_NDJSON_BUCKET, key)
-
-
-def _remove_local_temp_files(ndjson_path: str, parquet_path: str) -> None:
-    """Remove local temp files from the server to free disk after successful upload."""
-    for path in (ndjson_path, parquet_path):
-        if not path:
-            continue
-        try:
-            if os.path.isfile(path):
-                os.remove(path)
-                logger.info("Removed local temp file: %s", path)
-        except OSError as e:
-            logger.warning("Could not remove local temp file %s: %s", path, e)
 
 
 def _extract_metric_block(log_message: str) -> Optional[str]:
@@ -404,21 +382,8 @@ def convert_ndjson_to_parquet(
 
     if writer is not None:
         writer.close()
-        # Upload parquet then delete raw NDJSON to free space; only delete after successful upload
-        try:
-            _upload_parquet_to_minio(parquet_path, start_dt)
-            _delete_ndjson_from_minio(start_dt)
-            _remove_local_temp_files(ndjson_path, parquet_path)
-            logger.info("Parquet uploaded, raw NDJSON deleted from MinIO, and local temp files removed for %s", start_dt.strftime("%Y-%m-%d"))
-        except Exception:
-            logger.exception("Parquet upload or raw delete failed. Raw NDJSON and local files preserved.")
-            raise
-    else:
-        logger.warning(
-            "No valid records for %s; parquet not created and raw NDJSON preserved.",
-            start_dt.strftime("%Y-%m-%d"),
-        )
-        _remove_local_temp_files(ndjson_path, "")
+
+    _upload_parquet_to_minio(parquet_path, start_dt)
 
     print(
         "Parquet conversion complete: "
